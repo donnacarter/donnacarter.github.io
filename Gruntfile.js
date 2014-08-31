@@ -252,6 +252,7 @@ module.exports = function (grunt) {
             // Copy moves asset files and directories.
             'images/**/*',
             'fonts/**/*',
+            'js/**/*',
             // Like Jekyll, exclude files & folders prefixed with an underscore.
             '!**/_*{,/**}',
             '_bower_components{,/**}/*.{js,css,png,svg,jpg,jpeg,gif,eot,ttf,woff}'
@@ -383,7 +384,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean',
-    'copy:generatedImages'
+    'copy:generatedImages',
     // Jekyll cleans files from the target directory, so must run first
     'jekyll:dist',
     'clean:distHelp',
