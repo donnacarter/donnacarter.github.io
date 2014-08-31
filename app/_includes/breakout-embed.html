@@ -1,0 +1,12 @@
+<figure class="media-caption {{ include.breakout_class }}">
+  <div class="media-wrapper">
+    <div class="embed-responsive{% if include.4by3 %} embed-responsive-4by3{% else %} embed-responsive-16by9{% endif %}">
+      {{ include.embed }}
+    </div>
+  </div>
+  {% if include.caption %}
+  <div class="caption-wrapper">
+    <figcaption class="caption">{{ include.caption }}</figcaption>
+  </div>
+  {% endif %}
+</figure>

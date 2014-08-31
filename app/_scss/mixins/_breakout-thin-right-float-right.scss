@@ -1,0 +1,9 @@
+@mixin breakout-thin-right-float-right {
+  float: right;
+  padding-left: $grid-basic-padding;
+  width: 50%;
+  @media (min-width: $screen-xs-min) {
+    width: 40%;
+    padding-left: $grid-basic-padding * 2;
+  }
+}

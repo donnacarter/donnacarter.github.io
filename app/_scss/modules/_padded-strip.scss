@@ -1,0 +1,4 @@
+.padded-strip {
+  @include strip('false', 'false');
+  @extend .container;
+}

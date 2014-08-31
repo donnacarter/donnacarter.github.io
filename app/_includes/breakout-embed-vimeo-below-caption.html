@@ -1,0 +1,5 @@
+{% capture embed %}
+<iframe width="848" height="{% if include.4by3 %}636{% else %}477{% endif %}" src="//player.vimeo.com/video/{{ include.code }}?rel=0" class="embed-responsive-item" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+{% endcapture %}
+
+{% include breakout-embed.html breakout_class='breakout-media-below-caption' caption=include.caption embed=embed 4by3=include.4by3 %}

@@ -1,0 +1,26 @@
+.basic-pager {
+  @extend .list-inline;
+  @include clearfix;
+  @include main-copy;
+  padding-top: $grid-basic-padding * 2;
+  .basic-pager-next {
+    float: right;
+  }
+  .basic-pager-prev {
+    float: left;
+  }
+  .basic-pager-link {
+    font-family: $font-family-serif;
+    color: white;
+    background-color: $medium-grey;
+    display: inline-block;
+    padding: $padding-large-vertical $padding-large-horizontal;
+    border-radius: $border-radius-base;
+    .basic-pager-left-icon {
+      margin-right: 0.5em
+    }
+    .basic-pager-right-icon {
+      margin-left: 0.5em
+    }
+  }
+}

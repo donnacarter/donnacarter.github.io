@@ -1,0 +1,61 @@
+---
+layout: sticky-insert-page
+section_extra_classes: work-post thin-right
+active_section: work
+theme: salmon
+---
+{% contentfor sub_title %}{{ page.disciplines | join: ', ' }}{% endcontentfor %}
+{% assign category = site.categories['work'] %}
+{% for post in category %}
+  {% if post.path == page.path %}
+    {% assign previous_index = forloop.index0|minus:1 %}
+    {% assign next_index = forloop.index0|plus:1 %}
+    {% if previous_index >= 0 and next_index >= 0 category[previous_index] and category[next_index] %}
+      {% assign first_post = category[previous_index] %}
+      {% assign second_post = category[next_index] %}
+    {% elsif previous_index >= 0 category[previous_index] %}
+      {% assign second_post = category[previous_index] %}
+      {% assign previous_previous_index = forloop.index0|minus:2 %}
+      {% assign first_post = category[previous_previous_index] %}
+    {% elsif next_index >= 0 category[next_index] %}
+      {% assign next_next_index = forloop.index0|plus:2 %}
+      {% assign first_post = category[next_index] %}
+      {% assign second_post = category[next_next_index] %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+<article class="main-content">
+  {{ content }}
+</article>
+<section class="post-meta sticky-insert-transplant" data-append=".work-post .right-col">
+  <ul class="post-share share-list">
+    <li class="share-item">
+      <a href="#" class="share-link circle-icon outline">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li class="share-item">
+      <a href="#" class="share-link circle-icon outline">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+  </ul>
+</section>
+
+{% contentfor post_sticky %}
+<div class="basic-strip">
+  <section class="more-content salmon">
+    <header class="more-content-header">
+      <h3 class="more-content-header-title">More Work</h3>
+    </header>
+    <div class="more-content-body">
+      <div class="left-col">
+        {% include work-summary.html post=first_post extra_classes='work-summary-more' %}
+      </div>
+      <div class="right-col">
+        {% include work-summary.html post=second_post extra_classes='work-summary-more' %}
+      </div>
+    </div>
+  </section>
+</div>
+{% endcontentfor %}

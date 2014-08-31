@@ -1,0 +1,13 @@
+.breakout-media-float-right-narrow {
+  @include breakout-thin-right;
+  @include breakout-thin-right-float-right;
+  @media (min-width: $screen-md-min) {
+    padding-right: $grid-basic-padding;
+    width: ($col-width-md * 4) - ($grid-basic-padding * 2);
+    margin-right: (($col-width-md * 3) - ($grid-basic-padding * 2)) * -1;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: ($col-width-lg * 4) - ($grid-basic-padding * 2);
+    margin-right: (($col-width-lg * 3) - ($grid-basic-padding * 2)) * -1;
+  }
+}

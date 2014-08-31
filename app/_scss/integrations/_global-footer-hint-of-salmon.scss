@@ -1,0 +1,19 @@
+// bumping selector
+.hint-of-salmon-theme.hint-of-salmon-theme {
+  .global-footer {
+    a {
+      &:focus, &:hover, &:active {
+        color: $lighter-salmon;
+      }
+    }
+    .circle-icon {
+      &:focus, &:hover, &:active {
+        border-color: $lighter-salmon;
+        background-color: $lighter-salmon;
+        &.outline {
+          color: $lighter-salmon !important;
+        }
+      }
+    }
+  }
+}

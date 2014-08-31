@@ -1,0 +1,89 @@
+---
+layout: default
+title: Donna Carter
+---
+<div class="grey-theme texture-parallax">
+  <section class="intro-hero navbar-over">
+    <div class="intro-hero-wrapper">
+      <h1 class="intro-hero-title">
+        <span class="intro">Hi there,&nbsp;</span>
+        <span class="name">I'm Donna.</span>
+      </h1>
+      <h2 class="intro-hero-sub-title">
+        Graphic Designer, Coffee Geek, Reluctant DIY Enthusiast.
+      </h2>
+      <div class="intro-hero-image-wrapper">
+        <!-- <img
+          src="/images/don-dons-with-border.png"
+          class="intro-hero-image"> -->
+        {% picture home_page_hero home/donna-carter-with-border.png class='intro-hero-image' %}
+      </div>
+      <p class="intro-hero-copy">
+        Currently based in London &amp; working in the coffee industry. I am an ambitious person with a love for all things design.
+        So while you are here browse my <a href="/work/" class="work-link">Work</a>, read my <a href="/journal/" class="journal-link">Journal</a> or just learn
+        more about <a href="/me/" class="me-link">Me</a>
+      </p>
+      <div class="intro-hero-social">
+        <a href="https://twitter.com/le_beau" class="circle-icon" title="Follow me on Twitter" target="_blank">
+          <i class="fa fa-twitter"></i>
+        </a>
+        <a href="https://dribbble.com/donna_carter" title="Dribbble" class="circle-icon" title="Browse my sketches on Dribbble" target="_blank">
+          <i class="fa fa-dribbble"></i>
+        </a>
+        <a href="https://www.flickr.com/photos/donnacarter/" title="Flickr" class="circle-icon" title="Explore my photography on Flickr" target="_blank">
+          <i class="fa fa-flickr"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+<div class="basic-strip">
+  <section class="left-sidebar sticky-col">
+    <div class="left-col stick">
+      <div class="left-col-wrapper">
+        <h3 class="side-title">
+          <a href="/work/" class="header-link salmon-hint">
+            Work
+          </a>
+        </h3>
+      </div>
+    </div>
+    <div class="right-col">
+      <ul class="work-list">
+        {% for post in site.categories['work'] limit:6 %}
+        <li class="work-item">
+          <a href="{{ post.url }}" class="work-square-link">
+            <div class="work-square-text">
+              <h4 class="work-square-title">{{ post.title }}</h4>
+              <h5 class="work-square-sub-title">{{ post.disciplines | join: ', ' }}</h5>
+            </div>
+            {% picture work_square {{ post.thumbnail }} class="work-square-image" alt="" %}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+</div>
+<div class="teal-theme texture-parallax">
+  <div class="padded-strip">
+    <section class="left-sidebar sticky-col">
+      <div class="left-col stick">
+        <div class="left-col-wrapper">
+          <h3 class="side-title">
+            <a href="/journal/" class="header-link">Journal</a>
+          </h3>
+        </div>
+      </div>
+      <div class="right-col">
+        <ul class="journal-list">
+          {% for post in site.categories['journal'] limit:3 %}
+          <li class="journal-item">
+            {% include journal-summary.html title_element='h4' post=post %}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+  </div>
+</div>

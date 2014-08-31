@@ -1,0 +1,16 @@
+.header-link {
+  border-bottom: 5px solid transparent;
+  display: inline-block;
+  padding-bottom: 0.33em;
+  @include border-transition;
+  color: $text-color;
+  &:hover, &:active, &:focus {
+    color: $text-color;
+    text-decoration: none;
+    border-color: $text-color;
+    &.salmon-hint {
+      border-color: $salmon;
+    }
+  }
+
+}

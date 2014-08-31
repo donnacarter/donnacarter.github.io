@@ -1,0 +1,13 @@
+{
+  "name": "donnacarter",
+  "private": true,
+  "dependencies": {
+    "bootstrap-sass-official": "~3.1.0",
+    "modernizr": "~2.8.2",
+    "jquery": "~1.11.1",
+    "font-awesome": "~4.1.0",
+    "headroom.js": "~0.6.0",
+    "jquery.debouncedresize": "~1.0.1",
+    "picturefill": "~2.1.0"
+  }
+}

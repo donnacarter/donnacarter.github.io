@@ -1,0 +1,58 @@
+.sticky-col {
+  @media(min-width: $screen-md-min) {
+    .stick {
+      @media(min-width: $screen-md-min) {
+        position: sticky;
+        top: $grid-basic-padding;
+        transition: top .25s linear;
+      }
+    }
+
+    .navbar-pinned &, .no-dcscroll & {
+      .stick {
+        top: $navbar-smallscreen-height + $grid-basic-padding;
+      }
+    }
+
+    .no-csspositionsticky & {
+      .stick {
+        position: absolute;
+        top: 0;
+        transition: top 0, transform .25s linear;
+        width: $col-width-md * 3;
+        @media(min-width: $screen-lg-min) {
+          width: $col-width-lg * 3;
+        }
+      }
+      .fake-sticky {
+        top: $grid-basic-padding;
+        position: fixed;
+        right: auto;
+      }
+
+      .fake-sticky-top {
+      }
+
+      .fake-sticky-bottom {
+        position: absolute;
+        top: auto;
+        bottom: 0;
+      }
+    }
+
+    .no-csspositionsticky .navbar-pinned & {
+      .fake-sticky-top {
+        transition: transform 0;
+        transform: translateY(0);
+      }
+      .fake-sticky, .fake-sticky-bottom {
+        transform: translateY($navbar-smallscreen-height);
+      }
+      .fake-sticky-bottom {
+        transition: transform 0;
+        bottom: $navbar-smallscreen-height;
+      }
+    }
+  }
+
+}

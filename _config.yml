@@ -1,0 +1,211 @@
+# Jekyll configuration precedence:
+# 1. Gruntfile task
+# 2. config.build.yml
+# 3. config.yml
+
+name: donnacarter
+description: Donna Carter
+author:
+  name: Donna Carter
+  email: me@donnacarter.co.uk
+
+protocol: http
+host: 0.0.0.0:9000
+
+# Grunt handles images and assets.
+exclude: ['img', 'css', 'js', 'fonts',
+          '**.png', '**.jpg', '**.jpeg', '**.gif', '**.webp', '**.svg', '**.ico']
+
+include: ['.htaccess']
+
+category_paginate:
+  - category: journal
+    page: journal/index.html
+    per_page: 6
+  - category: work
+    page: work/index.html
+    per_page: 12
+
+# _config.build.yml sets future and show_drafts to false on `grunt build`
+future: true
+show_drafts: true
+
+# Markdown library
+markdown: redcarpet
+#   extensions: ['fenced_code_blocks', 'smart']
+
+paginate_path: "page-:num/"
+
+picture:
+  source: images/fullsize
+  output: generated-images
+  markup: picture
+  presets:
+    # # Full width pictures
+    # default:
+    #   ppi: [1, 1.5]
+    #   attr:
+    #     class: blog-full
+    #     itemprop: image
+    #   source_lrg:
+    #     media: "(min-width: 40em)"
+    #     width: 700
+    #   source_med:
+    #     media: "(min-width: 30em)"
+    #     width: 450
+    #   source_default:
+    #     width: 350
+    #     height: 200
+    home_page_hero:
+      ppi: [1, 2]
+      attr:
+        itemprop: image
+      source_default:
+        width: 290
+
+    middle_column:
+      ppi: [1, 2]
+      attr:
+        itemprop: image
+      source_lg:
+        media: '(min-width: 1200px)'
+        width: 535
+      source_md:
+        media: '(min-width: 992px)'
+        width: 435
+      source_sm:
+        media: '(min-width: 535px)'
+        width: 535
+      source_xs:
+        media: '(min-width: 321px)'
+        width: 435
+      source_default:
+        width: 290
+
+    all_but_sidebar:
+      ppi: [1, 2]
+      attr:
+        itemprop: image
+      source_lg:
+        media: '(min-width: 1200px)'
+        width: 848
+      source_md:
+        media: '(min-width: 992px)'
+        width: 698
+      source_sm:
+        media: '(min-width: 321px)'
+        width: 720
+      source_default:
+        width: 290
+
+    float_in_article:
+      ppi: [1, 2]
+      attr:
+        itemprop: image
+      source_lg:
+        media: '(min-width: 1200px)'
+        width: 413
+      source_md:
+        media: '(min-width: 992px)'
+        width: 329
+      source_default:
+        width: 253
+
+    float_in_article_narrow:
+      ppi: [1, 2]
+      attr:
+        itemprop: image
+      source_lg:
+        media: '(min-width: 1200px)'
+        width: 315
+      source_md:
+        media: '(min-width: 992px)'
+        width: 248
+      source_default:
+        width: 253
+
+    float_in_article_column:
+      ppi: [1, 2]
+      attr:
+        itemprop: image
+      source_lg:
+        media: '(min-width: 1200px)'
+        width: 218
+      source_md:
+        media: '(min-width: 992px)'
+        width: 168
+      source_default:
+        width: 253
+
+    paired_all_but_sidebar:
+      ppi: [1, 2]
+      attr:
+        itemprop: image
+      source_lg:
+        media: '(min-width: 1200px)'
+        width: 409
+      source_md:
+        media: '(min-width: 992px)'
+        width: 334
+      source_sm:
+        media: '(min-width: 768px)'
+        width: 345
+      source_default:
+        width: 290
+
+    paired_middle_column:
+      ppi: [1, 2]
+      attr:
+        itemprop: image
+      source_lg:
+        media: '(min-width: 1200px)'
+        width: 253
+      source_md:
+        media: '(min-width: 992px)'
+        width: 203
+      source_sm:
+        media: '(min-width: 768px)'
+        width: 345
+      source_default:
+        width: 290
+
+    trio_all_but_sidebar:
+      ppi: [1, 2]
+      attr:
+        itemprop: image
+      source_lg:
+        media: '(min-width: 1200px)'
+        width: 409
+      source_md:
+        media: '(min-width: 992px)'
+        width: 334
+      source_sm:
+        media: '(min-width: 768px)'
+        width: 220
+      source_default:
+        width: 290
+
+    journal_thumbnail:
+      ppi: [1, 2]
+      attr:
+        itemprop: image
+      source_sm:
+        media: '(min-width: 768px)'
+        width: 220
+        height: 220
+      source_default:
+        width: 160
+        height: 160
+
+    work_square:
+      ppi: [1, 2]
+      attr:
+        itemprop: image
+      source_lg:
+        media: '(min-width: 1200px)'
+        width: 262
+      source_md:
+        media: '(min-width: 992px)'
+        width: 212
+      source_default:
+        width: 220

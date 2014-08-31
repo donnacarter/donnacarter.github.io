@@ -1,0 +1,18 @@
+---
+layout: sticky-insert-page
+title: Journal
+sub_title: Adventures & design related findings
+theme: teal
+active_section: journal
+current_section: journal
+---
+
+<ul class="journal-list{% if paginator.pages.total_pages > 1 %} with-pager{% endif %}">
+  {% for post in paginator.posts %}
+    <li class="journal-item">
+      {% include journal-summary.html post=post %}
+    </li>
+  {% endfor %}
+</ul>
+
+{% include pager.html paginator=paginator theme=page.theme previous='Newer' next='Older' %}

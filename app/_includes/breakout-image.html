@@ -1,0 +1,11 @@
+<figure class="media-caption {{ include.breakout_class }}">
+  <div class="media-wrapper">
+    {% capture classname %}media-image{% if include.image_border %} media-image-with-border {% endif %}{% endcapture %}
+    {% picture {{ include.resize_type }} {{ include.image_src }} class="{{ classname }}" alt="{{ include.image_alt }}" %}
+  </div>
+  {% if include.caption %}
+  <div class="caption-wrapper">
+    <figcaption class="caption">{{ include.caption }}</figcaption>
+  </div>
+  {% endif %}
+</figure>

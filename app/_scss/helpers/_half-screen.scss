@@ -1,0 +1,29 @@
+.half-screen {
+  @media (min-width: $screen-sm-min) {
+    width: 50%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+  }
+}
+
+.half-screen-container {
+  padding-left: $grid-gutter-width / 2;
+  padding-right: $grid-gutter-width / 2;
+  @media (min-width: $screen-sm-min) {
+    @include clearfix();
+    &.left {
+      float: right;
+    }
+    &.right {
+      float: left;
+    }
+    width: $container-sm / 2;
+  }
+  @media (min-width: $screen-md-min) {
+    width: $container-md / 2;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: $container-lg / 2;
+  }
+}

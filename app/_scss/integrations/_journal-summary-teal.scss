@@ -1,0 +1,19 @@
+.teal-theme {
+  .journal-summary {
+    .journal-summary-title-link {
+      color: white;
+      transition: color .25s ease-in-out;
+      &:hover, &:active, &:focus {
+        color: $teal-dark-green;
+      }
+    }
+
+    .journal-summary-date {
+      color: $teal-darker;
+    }
+
+    .journal-summary-content {
+      color: $white-hint-of-teal;
+    }
+  }
+}

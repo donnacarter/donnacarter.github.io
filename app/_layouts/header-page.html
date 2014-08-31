@@ -1,0 +1,15 @@
+---
+layout: default
+has_header: true
+---
+
+{{ content }}
+
+{% contentfor header %}
+  {% capture contentblock_title %}{% contentblock title %}{% endcapture %}
+  {% capture title %}{% if contentblock_title != '' %}{{ contentblock_title }}{% else %}{{ page.title }}{% endif %}{% endcapture %}
+  {% capture contentblock_sub_title %}{% contentblock sub_title %}{% endcapture %}
+  {% capture sub_title %}{% if contentblock_sub_title != '' %}{{ contentblock_sub_title }}{% else %}{{ page.sub_title }}{% endif %}{% endcapture %}
+  {% capture extra_classes %}{% if page.theme %}{{ page.theme }}-theme{% endif %}{% if page.header_extra_classes %} {{ page.header_extra_classes }}{% endif %}{% endcapture %}
+  {% include main-header.html title=title sub_title=sub_title extra_classes=extra_classes no_sticky_insert=page.header_no_sticky_insert %}
+{% endcontentfor %}

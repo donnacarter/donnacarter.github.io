@@ -1,0 +1,19 @@
+// bumping selector
+.hint-of-yellow-theme.hint-of-yellow-theme {
+  .global-footer {
+    a {
+      &:focus, &:hover, &:active {
+        color: $brighter-yellow;
+      }
+    }
+    .circle-icon {
+      &:focus, &:hover, &:active {
+        border-color: $brighter-yellow;
+        background-color: $brighter-yellow;
+        &.outline {
+          color: $brighter-yellow !important;
+        }
+      }
+    }
+  }
+}

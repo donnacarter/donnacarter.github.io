@@ -1,0 +1,16 @@
+.breakout-media-right-caption {
+  @include breakout-thin-right;
+  @extend .row;
+  .media-wrapper {
+    @extend .col-md-8;
+  }
+  .caption-wrapper {
+    @extend .col-md-4;
+  }
+
+  @media(min-width:$screen-md-min) {
+    .caption {
+      margin-top: 0;
+    }
+  }
+}

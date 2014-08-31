@@ -1,0 +1,14 @@
+.left-sidebar {
+  .no-csspositionsticky & {
+    .right-col:not(.shove-right) {
+      @extend .col-md-offset-3;
+    }
+  }
+  .side-title {
+    margin-bottom: 0;
+  }
+  .side-sub-title {
+    margin-top: $grid-basic-padding;
+    margin-bottom: 0;
+  }
+}

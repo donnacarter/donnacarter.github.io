@@ -1,0 +1,135 @@
+.global-navbar {
+  @extend .navbar;
+  @extend .navbar-default;
+  @extend .purple-theme;
+  background-color: rgba($main-purple, 0.9);
+  font-family: $font-family-serif;
+  border: 0;
+  border-radius: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: $zindex-navbar;
+  min-height: $navbar-smallscreen-height;
+
+  @media (max-height: $screen-short-max) {
+    .no-dcscroll & {
+      position: absolute;
+    }
+  }
+
+  &.headroom-pinned {
+    transform: translateY(0%);
+  }
+  &.headroom-unpinned {
+    transform: translateY(-100%);
+  }
+
+  &.top-of-screen {
+    background-color: $main-purple;
+  }
+
+  &.transition-transform {
+    transition: transform .25s linear;
+  }
+
+  .brand {
+    margin-top: 10px;
+    float: left;
+    display: block;
+    width: 40px;
+    opacity: 0.9;
+    transition: all .25s ease-in-out;
+    &:hover, &:active, &:focus {
+      opacity: 1;
+    }
+  }
+
+  .global-nav {
+    visibility: hidden;
+    .wf-active &, .wf-inactive &, .wf-fail & {
+      visibility: visible
+    }
+    @extend .pull-right;
+    @extend .list-inline;
+    margin: 0;
+    display: table;
+
+    li {
+      display: table-cell;
+      vertical-align: middle;
+      height: $navbar-smallscreen-height;
+      transition: all .25s ease-in-out;
+    }
+    .item {
+      opacity: 0.8;
+      color: white;
+      transition: all .25s ease-in-out;
+      @include border-transition;
+      padding: $navbar-padding-vertical/4 $navbar-padding-horizontal/4;
+      margin: 0 $navbar-padding-horizontal/4;
+      line-height: $line-height-computed;
+      text-transform: uppercase;
+      border-bottom: 5px solid transparent;
+      &:hover, &:focus, &:active {
+        opacity: 1;
+        text-decoration: none;
+      }
+
+      &.current {
+        opacity: 1;
+        cursor: default;
+      }
+
+      &.me {
+        &:hover, &:focus, &:active, &.active {
+          border-color: $yellow;
+        }
+      }
+      &.work {
+        &:hover, &:focus, &:active, &.active {
+          border-color: $salmon;
+        }
+      }
+      &.journal {
+        &:hover, &:focus, &:active, &.active {
+          border-color: $teal;
+        }
+      }
+    }
+  }
+
+  transition: height .25s ease-in-out, background-color .25s ease-in-out;
+
+  @media(min-width: $screen-xs-min) and (min-height: $screen-short-max) {
+    .global-nav {
+      .item {
+        padding-left: $navbar-padding-horizontal/2;
+        padding-right: $navbar-padding-horizontal/2;
+        margin: 0 $navbar-padding-horizontal/2;
+      }
+    }
+
+    .dcscroll &.top-of-screen {
+      min-height: $navbar-height;
+      background-color: $main-purple;
+      .brand {
+        margin-top: 15px;
+        width: 60px;
+      }
+
+      .global-nav {
+        .item {
+          padding-top: $navbar-padding-vertical/4;
+          padding-bottom: $navbar-padding-vertical/4;
+        }
+
+        li {
+          height: $navbar-height;
+        }
+      }
+    }
+
+  }
+}

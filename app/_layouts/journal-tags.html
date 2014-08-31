@@ -1,0 +1,17 @@
+---
+layout: sticky-insert-page
+active_section: journal
+title: Journal
+theme: teal
+---
+{% contentfor sub_title %}#{{ page.tag_lower | slug }}{% endcontentfor %}
+
+<ul class="journal-list{% if paginator.pages.total_pages > 1 %} with-pager{% endif %}">
+  {% for post in paginator.posts %}
+    <li class="journal-item">
+      {% include journal-summary.html post=post %}
+    </li>
+  {% endfor %}
+</ul>
+
+{% include pager.html paginator=paginator theme=page.theme previous='Newer' next='Older' %}

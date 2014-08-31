@@ -1,0 +1,14 @@
+.work-list {
+  @extend .row;
+  @extend .list-unstyled;
+  overflow: hidden;
+  margin-top: $grid-basic-padding * -1;
+  .work-item {
+    @extend .col-xs-6;
+    @media (min-width: $screen-xs-min) {
+      width: 33.33333%;
+    }
+    padding-top: $grid-basic-padding;
+    padding-bottom: $grid-basic-padding;
+  }
+}

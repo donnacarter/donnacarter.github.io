@@ -1,0 +1,66 @@
+.main-header {
+  width: 100%;
+  .wrapper {
+    text-align: center;
+    @include strip('false', 'true');
+    display: table;
+    min-height: $main-header-height-xs;
+  }
+  &.fixed {
+    position: fixed;
+    top: 0;
+  }
+  .spacer {
+    display: table-cell;
+    vertical-align: middle;
+    @extend .font-fade;
+  }
+  .title {
+    font-size: 200%;
+  }
+  .sub-title {
+    font-size: 90%;
+  }
+
+  @media(min-width: $screen-xs-min) {
+    .title {
+      font-size: 250%;
+    }
+    .sub-title {
+      font-size: 105%;
+    }
+  }
+  @media(min-width: $screen-sm-min) {
+    .wrapper {
+      min-height: $main-header-height-sm;
+    }
+    .title {
+      font-size: 350%;
+    }
+    .sub-title {
+      font-size: 110%;
+    }
+  }
+  @media(min-width: $screen-md-min) {
+    .wrapper {
+      min-height: $main-header-height-md;
+    }
+    .title {
+      font-size: 425%;
+    }
+    .sub-title {
+      font-size: 115%;
+    }
+  }
+  @media(min-width: $screen-lg-min) {
+    .wrapper {
+      min-height: $main-header-height-lg;
+    }
+    .title {
+      font-size: 500%;
+    }
+    .sub-title {
+      font-size: 120%;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{% if include.paginator.previous_page or include.paginator.next_page %}
+<ul class="basic-pager {{ include.theme }} {{ include.extra_classes }}">
+  {% if include.paginator.previous_page %}
+    <li class="basic-pager-prev">
+      <a href="{{ paginator.previous_page_path }}" class="basic-pager-link">
+        <i class="fa fa-caret-left basic-pager-left-icon"></i>
+        {{ include.previous | default: 'Previous' }}
+      </a>
+    </li>
+  {% endif %}
+  {% if include.paginator.next_page %}
+    <li class="basic-pager-next">
+      <a href="{{ paginator.next_page_path }}" class="basic-pager-link">
+        {{ include.next | default: 'Next' }}
+        <i class="fa fa-caret-right basic-pager-right-icon"></i>
+      </a>
+    </li>
+  {% endif %}
+</ul>
+{% endif %}

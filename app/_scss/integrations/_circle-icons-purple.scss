@@ -1,0 +1,20 @@
+// used to bump up selector specifity
+*, .hint-of-teal-theme {
+  .purple-theme {
+    .circle-icon {
+      color: $main-purple !important;
+      border-color: white;
+      background-color: white;
+      &.outline {
+        color: white !important;
+      }
+      &:focus, &:hover, &:active {
+        border-color: $teal-light-green;
+        background-color: $teal-light-green;
+        &.outline {
+          color: $teal-light-green !important;
+        }
+      }
+    }
+  }
+}

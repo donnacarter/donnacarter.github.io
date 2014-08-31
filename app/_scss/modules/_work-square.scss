@@ -1,0 +1,95 @@
+.work-square-link {
+  width: 100%;
+  position: relative;
+  display: block;
+
+  .work-square-image {
+    @extend .img-responsive;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    width: 220px;
+    .work-square-image {
+      width: 220px;
+      height: 220px;
+    }
+  }
+
+  @media (min-width: $screen-md-min) {
+    width: 212px;
+    .work-square-image {
+      width: 212px;
+      height: 212px;
+    }
+  }
+
+  @media (min-width: $screen-lg-min) {
+    width: 262px;
+    .work-square-image {
+      width: 262px;
+      height: 262px;
+    }
+  }
+
+  .work-square-text {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    color: white;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+    padding: 8px;
+    padding-top: 20%;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+    line-height: 1;
+  }
+
+  .work-square-title, .work-square-subtitle {
+    margin: 0;
+    opacity: 0.9;
+    transition: opacity .25s ease-in-out;
+    @include border-transition;
+  }
+
+  .work-square-title {
+    font-size: 110%;
+    display: inline;
+    line-height: 1.2;
+    border-bottom: 2px solid transparent;
+  }
+
+  &:hover, &:focus, &:active {
+    .work-square-title, .work-square-subtitle {
+      opacity: 1;
+    }
+    .work-square-title {
+      border-color: $salmon;
+    }
+  }
+
+  .work-square-sub-title {
+    font-size: 90%;
+    font-family: $font-family-sans-serif;
+    font-weight: normal;
+    margin-top: 3px;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    .work-square-text {
+      padding-left: $grid-basic-padding;
+      padding-right: $grid-basic-padding;
+      padding-bottom: $grid-basic-padding;
+    }
+
+    .work-square-title {
+      font-size: 120%;
+      line-height: 1.5;
+      border-bottom: 3px solid transparent;
+    }
+
+    .work-square-sub-title {
+      font-size: 100%;
+      margin-top: 5px;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.breakout-media-right-caption-pair {
+  @include breakout-thin-right;
+  @extend .row;
+  .left-content {
+    @extend .col-md-8;
+  }
+  .media-group {
+    @extend .row;
+  }
+  .image-one, .image-two {
+    margin-bottom: $grid-basic-padding;
+    @media (min-width: $screen-xs-min) {
+      @include make-xs-column(6);
+      margin-bottom: 0;
+    }
+  }
+
+  .caption-wrapper {
+    @extend .col-md-4;
+  }
+
+  @media(min-width:$screen-md-min) {
+    .caption {
+      margin-top: 0;
+    }
+  }
+
+}

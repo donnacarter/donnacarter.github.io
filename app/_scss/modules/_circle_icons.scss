@@ -1,0 +1,30 @@
+.circle-icon {
+  border: 1px solid $medium-grey;
+  background-color: $medium-grey;
+  display: inline-block;
+  margin: 0.1em 0.5em 0.1em 0;
+  vertical-align: middle;
+  border-radius: 50%;
+  text-align: center;
+  color: white !important;
+  transition: all .25s ease-in-out;
+  &:focus, &:hover, &:active {
+    background-color: $main-purple;
+    border-color: $main-purple;
+    &.outline {
+      color: $main-purple !important;
+    }
+  }
+  &.outline {
+    color: $medium-grey !important;
+    background-color: transparent !important;
+  }
+  .fa {
+    width: 1em;
+    height: 1em;
+    margin: 0.5em;
+  }
+  &:last-of-type {
+    margin-right: 0;
+  }
+}

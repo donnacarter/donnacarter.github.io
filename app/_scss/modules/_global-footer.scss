@@ -1,0 +1,20 @@
+.global-footer {
+  @extend .purple-theme;
+  padding: 10px 0;
+  @include clearfix;
+  font-size: 90%;
+  .global-footer-copyright {
+    float: left;
+    display: inline-block;
+    line-height: 2em;
+  }
+
+  .global-footer-nav {
+    @extend .list-inline;
+    float: right;
+  }
+  @media(min-width: $screen-xs-min) and (min-height: $screen-short-max) {
+    padding: 15px 0;
+    font-size: 100%;
+  }
+}

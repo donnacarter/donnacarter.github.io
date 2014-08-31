@@ -1,0 +1,9 @@
+.share-list {
+  @extend .list-inline;
+  margin-left: 0;
+  margin-bottom: 0;
+  .share-item {
+    padding-left: 0;
+    padding-right: 10px;
+  }
+}

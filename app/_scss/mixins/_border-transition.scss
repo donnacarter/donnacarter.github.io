@@ -1,0 +1,3 @@
+@mixin border-transition {
+    transition: border-color .25s ease-in-out;
+}

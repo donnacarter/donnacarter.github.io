@@ -1,0 +1,13 @@
+.sticky-insert {
+  display: none;
+  @media(min-width: $screen-md-min) {
+    display: block;
+    opacity: 0;
+    &.animate {
+      transition: opacity .25s ease-in-out;
+    }
+    &.in {
+      opacity: 1;
+    }
+  }
+}

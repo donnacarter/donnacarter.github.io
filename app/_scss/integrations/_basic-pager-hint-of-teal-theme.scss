@@ -1,0 +1,11 @@
+.hint-of-teal-theme {
+  .basic-pager {
+    .basic-pager-link {
+      background-color: $teal-semi-bright;
+      &:focus, &:hover, &:active {
+        background-color: $teal-bright;
+        color: white;
+      }
+    }
+  }
+}

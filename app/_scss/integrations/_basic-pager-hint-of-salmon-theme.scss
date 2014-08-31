@@ -1,0 +1,11 @@
+.hint-of-salmon-theme {
+  .basic-pager {
+    .basic-pager-link {
+      background-color: $salmon;
+      &:focus, &:hover, &:active {
+        background-color: $darker-salmon;
+        color: white;
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+---
+layout: sticky-insert-page
+title: Work
+sub_title: Subtitle text
+theme: salmon
+active_section: work
+current_section: work
+---
+
+<ul class="work-list{% if paginator.pages.total_pages > 1 %} with-pager{% endif %}">
+  {% for post in paginator.posts %}
+  <li class="work-item">
+    <a href="{{ post.url }}" class="work-square-link">
+      <div class="work-square-text">
+        <h3 class="work-square-title">{{ post.title }}</h3>
+        <h4 class="work-square-sub-title">{{ post.disciplines | join: ', ' }}</h4>
+      </div>
+      {% picture work_square {{ post.thumbnail }} class="work-square-image" alt="" %}
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+
+{% include pager.html paginator=paginator theme=page.theme previous='Previous' next='Next' %}

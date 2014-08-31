@@ -1,0 +1,41 @@
+@mixin strip ($use-margins: 'true', $under-nav: 'false') {
+  @extend .container;
+
+  @if $use-margins == 'true' {
+    margin-top: $strip-vertical-padding-ltxs + if($under-nav == 'true', $navbar-smallscreen-height, 0);
+    margin-bottom: $strip-vertical-padding-ltxs;
+  } @else {
+    padding-top: $strip-vertical-padding-ltxs + if($under-nav == 'true', $navbar-smallscreen-height, 0);
+    padding-bottom: $strip-vertical-padding-ltxs;
+  }
+
+  @media (min-width: $screen-xs-min) {
+    @if $use-margins == 'true' {
+      margin-top: $strip-vertical-padding-xs + if($under-nav == 'true', $navbar-smallscreen-height, 0);
+      margin-bottom: $strip-vertical-padding-xs;
+    } @else {
+      padding-top: $strip-vertical-padding-xs + if($under-nav == 'true', $navbar-smallscreen-height, 0);
+      padding-bottom: $strip-vertical-padding-xs;
+    }
+    @if $under-nav == 'true' {
+      @media (min-height: $screen-short-max) {
+        padding-top: $strip-vertical-padding-xs + $navbar-height;
+      }
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    @if $use-margins == 'true' {
+      margin-top: $strip-vertical-padding-sm + if($under-nav == 'true', $navbar-smallscreen-height, 0);
+      margin-bottom: $strip-vertical-padding-sm;
+    } @else {
+      padding-top: $strip-vertical-padding-sm + if($under-nav == 'true', $navbar-smallscreen-height, 0);
+      padding-bottom: $strip-vertical-padding-sm;
+    }
+    @if $under-nav == 'true' {
+      @media (min-height: $screen-short-max) {
+        padding-top: $strip-vertical-padding-sm + $navbar-height;
+      }
+    }
+  }
+}

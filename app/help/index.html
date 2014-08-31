@@ -1,0 +1,229 @@
+---
+layout: sticky-insert-page
+section_extra_classes: thin-right
+title: Help
+sub_title: A guide to the site
+theme: yellow
+---
+<article class="main-content">
+  <ul>
+    <li><a href="#image-includes">Image Includes</a>
+      <ul>
+        <li><a href="#breakout-image-right-caption">Breakout Image Right Caption</a></li>
+        <li><a href="#breakout-image-right-caption-pair">Breakout Image Right Caption Pair</a></li>
+        <li><a href="#breakout-image-below-caption">Breakout Image Below Caption</a></li>
+        <li><a href="#breakout-image-below-caption-pair">Breakout Image Below Caption Pair</a></li>
+        <li><a href="#breakout-image-below-caption-trio">Breakout Image Below Caption Trio</a></li>
+        <li><a href="#breakout-image-below-caption">Breakout Image Below Caption</a></li>
+        <li><a href="#breakout-image-float-right">Breakout Image Float Right</a></li>
+        <li><a href="#breakout-image-float-right-narrow">Breakout Image Float Right Narrow</a></li>
+        <li><a href="#breakout-image-float-right-column">Breakout Image Float Right Column</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#embed-includes">Embed Includes</a>
+      <ul>
+        <li><a href="#breakout-embed-youtube-right-caption">Breakout Embed Youtube Right Caption</a></li>
+        <li><a href="#breakout-embed-youtube-below-caption">Breakout Embed Youtube Below Caption</a></li>
+        <li><a href="#breakout-embed-vimeo-right-caption">Breakout Embed Vimeo Right Caption</a></li>
+        <li><a href="#breakout-embed-vimeo-below-caption">Breakout Embed Vimeo Below Caption</a></li>
+      </ul>
+    </li>
+  </ul>
+  <h3 id="image-includes">Image Includes</h3>
+  <h4 id="breakout-image-right-caption">Breakout Image Right Caption</h4>
+  <p>Image should be at least 1070px wide. Should never be smaller than 535px wide.</p>
+  <h5>With Caption</h5>
+  <pre>{% raw %}{% include breakout-image-right-caption.html image_src='help/cute-dog-blue-top.jpg' image_alt='Cute dog with blue top' caption='A cute dog from &lt;a href="http://www.candogseat-this.com/cute-dogs-month-december/cute-dog-3/"&gt;candogseat-this.com&lt;/a&gt;' %}{% endraw %}</pre>
+  {% include breakout-image-right-caption.html image_src='help/cute-dog-blue-top.jpg' image_alt='Cute dog with blue top' caption='A cute dog from <a href="http://www.candogseat-this.com/cute-dogs-month-december/cute-dog-3/">candogseat-this.com</a>' %}
+
+  <h5>Without Caption</h5>
+  <pre>{% raw %}{% include breakout-image-right-caption.html image_src='help/cute-dog-white-pair.jpg' image_alt='A pair of cute dogs' %}{% endraw %}</pre>
+  {% include breakout-image-right-caption.html image_src='help/cute-dog-white-pair.jpg' image_alt='A pair of cute dogs' %}
+
+  <h5>With Border</h5>
+  <pre>{% raw %}{% include breakout-image-right-caption.html image_src='help/cute-dog-blue-top.jpg' image_alt='Cute dog with blue top' image_border=true %}{% endraw %}</pre>
+  {% include breakout-image-right-caption.html image_src='help/cute-dog-blue-top.jpg' image_alt='Cute dog with blue top' image_border=true %}
+
+  <h4 id="breakout-image-right-caption-pair">Breakout Image Right Caption Pair</h4>
+  <p>Images should be at least 506px wide. Should never be smaller than 253px wide.</p>
+  <h5>With Caption</h5>
+  <pre>{% raw %}{% include breakout-image-right-caption-pair.html image_1_src='help/cute-dog-present.jpg' image_1_alt='Cute dog with present' image_2_src='help/cute-dog-spaniel.jpg' image_2_alt='Cute cocker spaniel' caption='A pair of the cutest dogs' %}{% endraw %}</pre>
+  {% include breakout-image-right-caption-pair.html image_1_src='help/cute-dog-present.jpg' image_1_alt='Cute dog with present' image_2_src='help/cute-dog-spaniel.jpg' image_2_alt='Cute cocker spaniel' caption='A pair of the cutest dogs' %}
+
+  <h5>Without Caption</h5>
+  <pre>{% raw %}{% include breakout-image-right-caption-pair.html image_1_src='help/cute-dog-present.jpg' image_1_alt='Cute dog with present' image_2_src='help/cute-dog-spaniel.jpg' image_2_alt='Cute cocker spaniel' %}{% endraw %}</pre>
+  {% include breakout-image-right-caption-pair.html image_1_src='help/cute-dog-present.jpg' image_1_alt='Cute dog with present' image_2_src='help/cute-dog-spaniel.jpg' image_2_alt='Cute cocker spaniel' %}
+
+  <h5>With Border</h5>
+  <pre>{% raw %}{% include breakout-image-right-caption-pair.html image_1_src='help/cute-dog-present.jpg' image_1_alt='Cute dog with present' image_1_border=true image_2_src='help/cute-dog-spaniel.jpg' image_2_alt='Cute cocker spaniel' caption='A pair of the cutest dogs' image_2_border=true %}{% endraw %}</pre>
+  {% include breakout-image-right-caption-pair.html image_1_src='help/cute-dog-present.jpg' image_1_alt='Cute dog with present' image_1_border=true image_2_src='help/cute-dog-spaniel.jpg' image_2_alt='Cute cocker spaniel' image_2_border=true caption='A pair of the cutest dogs' %}
+
+  <h4 id="breakout-image-below-caption">Breakout Image Below Caption</h4>
+  <p>Image should be at least 1696px wide. Should never be smaller than 848px wide.</p>
+  <h5>With Caption</h5>
+  <pre>{% raw %}{% include breakout-image-below-caption.html image_src='help/cute-dog-blue-top.jpg' image_alt='Cute dog with blue top' caption='A cute dog from &lt;a href="http://www.candogseat-this.com/cute-dogs-month-december/cute-dog-3/"&gt;candogseat-this.com&lt;/a&gt;' %}{% endraw %}</pre>
+  {% include breakout-image-below-caption.html image_src='help/cute-dog-blue-top.jpg' image_alt='Cute dog with blue top' caption='A cute dog from <a href="http://www.candogseat-this.com/cute-dogs-month-december/cute-dog-3/">candogseat-this.com</a>' %}
+
+  <h5>Without Caption</h5>
+  <pre>{% raw %}{% include breakout-image-below-caption.html image_src='help/cute-dog-white-pair.jpg' image_alt='A pair of cute dogs' %}{% endraw %}</pre>
+  {% include breakout-image-below-caption.html image_src='help/cute-dog-white-pair.jpg' image_alt='A pair of cute dogs' %}
+
+  <h5>With Border</h5>
+  <pre>{% raw %}{% include breakout-image-below-caption.html image_src='help/cute-dog-blue-top.jpg' image_alt='Cute dog with blue top' image_border=true %}{% endraw %}</pre>
+  {% include breakout-image-below-caption.html image_src='help/cute-dog-blue-top.jpg' image_alt='Cute dog with blue top' image_border=true %}
+
+  <h4 id="breakout-image-below-caption-pair">Breakout Image Below Caption Pair</h4>
+  <p>Images should be at least 818px wide. Should never be smaller than 409px wide.</p>
+  <h5>With Caption</h5>
+  <pre>{% raw %}{% include breakout-image-below-caption-pair.html image_1_src='help/cute-dog-present.jpg' image_1_alt='Cute dog with present' image_2_src='help/cute-dog-spaniel.jpg' image_2_alt='Cute cocker spaniel' caption='A pair of the cutest dogs' %}{% endraw %}</pre>
+  {% include breakout-image-below-caption-pair.html image_1_src='help/cute-dog-present.jpg' image_1_alt='Cute dog with present' image_2_src='help/cute-dog-spaniel.jpg' image_2_alt='Cute cocker spaniel' caption='A pair of the cutest dogs' %}
+
+  <h5>Without Caption</h5>
+  <pre>{% raw %}{% include breakout-image-below-caption-pair.html image_1_src='help/cute-dog-present.jpg' image_1_alt='Cute dog with present' image_2_src='help/cute-dog-spaniel.jpg' image_2_alt='Cute cocker spaniel' %}{% endraw %}</pre>
+  {% include breakout-image-below-caption-pair.html image_1_src='help/cute-dog-present.jpg' image_1_alt='Cute dog with present' image_2_src='help/cute-dog-spaniel.jpg' image_2_alt='Cute cocker spaniel' %}
+
+  <h5>With Border</h5>
+  <pre>{% raw %}{% include breakout-image-below-caption-pair.html image_1_src='help/cute-dog-present.jpg' image_1_alt='Cute dog with present' image_1_border=true image_2_src='help/cute-dog-spaniel.jpg' image_2_alt='Cute cocker spaniel' image_2_border=true %}{% endraw %}</pre>
+  {% include breakout-image-below-caption-pair.html image_1_src='help/cute-dog-present.jpg' image_1_alt='Cute dog with present' image_1_border=true image_2_src='help/cute-dog-spaniel.jpg' image_2_alt='Cute cocker spaniel' image_2_border=true %}
+
+  <h4 id="breakout-image-below-caption-trio">Breakout Image Below Caption Trio</h4>
+  <p>Images should be at least 818px wide. Should never be smaller than 409px wide.</p>
+  <h5>With Caption</h5>
+  <pre>{% raw %}{% include breakout-image-below-caption-trio.html image_1_src='help/cute-dog-present.jpg' image_1_alt='Cute dog with present' image_2_src='help/cute-dog-spaniel.jpg' image_2_alt='Cute cocker spaniel' image_3_src='help/cute-dog-blue-top.jpg' image_3_alt='Cute dog with blue top' caption='A trio of cute dogs' %}{% endraw %}</pre>
+  {% include breakout-image-below-caption-trio.html image_1_src='help/cute-dog-present.jpg' image_1_alt='Cute dog with present' image_2_src='help/cute-dog-spaniel.jpg' image_2_alt='Cute cocker spaniel' image_3_src='help/cute-dog-blue-top.jpg' image_3_alt='Cute dog with blue top' caption='A trio of cute dogs' %}
+
+  <h5>Without Caption</h5>
+  <pre>{% raw %}{% include breakout-image-below-caption-trio.html image_1_src='help/cute-dog-present.jpg' image_1_alt='Cute dog with present' image_2_src='help/cute-dog-spaniel.jpg' image_2_alt='Cute cocker spaniel' image_3_src='help/cute-dog-blue-top.jpg' image_3_alt='Cute dog with blue top' %}{% endraw %}</pre>
+  {% include breakout-image-below-caption-trio.html image_1_src='help/cute-dog-present.jpg' image_1_alt='Cute dog with present' image_2_src='help/cute-dog-spaniel.jpg' image_2_alt='Cute cocker spaniel' image_3_src='help/cute-dog-blue-top.jpg' image_3_alt='Cute dog with blue top' %}
+
+  <h5>With Border</h5>
+  <pre>{% raw %}{% include breakout-image-below-caption-trio.html image_1_src='help/cute-dog-present.jpg' image_1_alt='Cute dog with present' image_1_border=true image_2_src='help/cute-dog-spaniel.jpg' image_2_alt='Cute cocker spaniel' image_3_src='help/cute-dog-blue-top.jpg' image_3_alt='Cute dog with blue top' image_3_border=true %}{% endraw %}</pre>
+  {% include breakout-image-below-caption-trio.html image_1_src='help/cute-dog-present.jpg' image_1_alt='Cute dog with present' image_1_border=true image_2_src='help/cute-dog-spaniel.jpg' image_2_alt='Cute cocker spaniel' image_3_src='help/cute-dog-blue-top.jpg' image_3_alt='Cute dog with blue top' image_3_border=true %}
+
+  <h4 id="breakout-image-float-right">Breakout Image Float Right</h4>
+  <p>Image should be at least 826px wide. Should never be smaller than 413px wide.</p>
+  <h5>With Caption</h5>
+  <pre>{% raw %}
+{% include breakout-image-float-right.html image_src='help/cute-dog-blue-top.jpg' image_alt='Cute dog with blue top' caption='A cute dog from &lt;a href="http://www.candogseat-this.com/cute-dogs-month-december/cute-dog-3/"&gt;candogseat-this.com&lt;/a&gt;' %}
+
+&lt;p&gt;
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vulputate iaculis blandit. Vestibulum cursus commodo volutpat. Curabitur laoreet eget dolor nec tristique. Fusce placerat, odio sit amet viverra malesuada, sem velit posuere mauris, ac adipiscing nisl neque id quam. Sed eu varius nisl. Nam sed accumsan risus. Donec sollicitudin magna ut tortor fermentum, et luctus neque ornare. Nam in sodales nulla, vitae faucibus neque. In hac habitasse platea dictumst.
+&lt;/p&gt;
+{% endraw %}</pre>
+  {% include breakout-image-float-right.html image_src='help/cute-dog-blue-top.jpg' image_alt='Cute dog with blue top' caption='A cute dog from <a href="http://www.candogseat-this.com/cute-dogs-month-december/cute-dog-3/">candogseat-this.com</a>' %}
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vulputate iaculis blandit. Vestibulum cursus commodo volutpat. Curabitur laoreet eget dolor nec tristique. Fusce placerat, odio sit amet viverra malesuada, sem velit posuere mauris, ac adipiscing nisl neque id quam. Sed eu varius nisl. Nam sed accumsan risus. Donec sollicitudin magna ut tortor fermentum, et luctus neque ornare. Nam in sodales nulla, vitae faucibus neque. In hac habitasse platea dictumst.</p>
+
+  <h5>Without Caption</h5>
+    <pre>{% raw %}
+{% include breakout-image-float-right.html image_src='help/cute-dog-blue-top.jpg' image_alt='Cute dog with blue top' %}
+
+&lt;p&gt;
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vulputate iaculis blandit. Vestibulum cursus commodo volutpat. Curabitur laoreet eget dolor nec tristique. Fusce placerat, odio sit amet viverra malesuada, sem velit posuere mauris, ac adipiscing nisl neque id quam. Sed eu varius nisl. Nam sed accumsan risus. Donec sollicitudin magna ut tortor fermentum, et luctus neque ornare. Nam in sodales nulla, vitae faucibus neque. In hac habitasse platea dictumst.
+&lt;/p&gt;
+{% endraw %}</pre>
+  {% include breakout-image-float-right.html image_src='help/cute-dog-blue-top.jpg' image_alt='Cute dog with blue top' %}
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vulputate iaculis blandit. Vestibulum cursus commodo volutpat. Curabitur laoreet eget dolor nec tristique. Fusce placerat, odio sit amet viverra malesuada, sem velit posuere mauris, ac adipiscing nisl neque id quam. Sed eu varius nisl. Nam sed accumsan risus. Donec sollicitudin magna ut tortor fermentum, et luctus neque ornare. Nam in sodales nulla, vitae faucibus neque. In hac habitasse platea dictumst.</p>
+
+  <h4 id="breakout-image-float-right-narrow">Breakout Image Float Right Narrow</h4>
+  <p>Image should be at least 630px wide. Should never be smaller than 315px wide.</p>
+  <h5>With Caption</h5>
+  <pre>{% raw %}
+{% include breakout-image-float-right-narrow.html image_src='help/cute-dog-blue-top.jpg' image_alt='Cute dog with blue top' caption='A cute dog from &lt;a href="http://www.candogseat-this.com/cute-dogs-month-december/cute-dog-3/"&gt;candogseat-this.com&lt;/a&gt;' %}
+
+&lt;p&gt;
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vulputate iaculis blandit. Vestibulum cursus commodo volutpat. Curabitur laoreet eget dolor nec tristique. Fusce placerat, odio sit amet viverra malesuada, sem velit posuere mauris, ac adipiscing nisl neque id quam. Sed eu varius nisl. Nam sed accumsan risus. Donec sollicitudin magna ut tortor fermentum, et luctus neque ornare. Nam in sodales nulla, vitae faucibus neque. In hac habitasse platea dictumst.
+&lt;/p&gt;
+{% endraw %}</pre>
+  {% include breakout-image-float-right-narrow.html image_src='help/cute-dog-blue-top.jpg' image_alt='Cute dog with blue top' caption='A cute dog from <a href="http://www.candogseat-this.com/cute-dogs-month-december/cute-dog-3/">candogseat-this.com</a>' %}
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vulputate iaculis blandit. Vestibulum cursus commodo volutpat. Curabitur laoreet eget dolor nec tristique. Fusce placerat, odio sit amet viverra malesuada, sem velit posuere mauris, ac adipiscing nisl neque id quam. Sed eu varius nisl. Nam sed accumsan risus. Donec sollicitudin magna ut tortor fermentum, et luctus neque ornare. Nam in sodales nulla, vitae faucibus neque. In hac habitasse platea dictumst.</p>
+
+  <h5>Without Caption</h5>
+    <pre>{% raw %}
+{% include breakout-image-float-right-narrow.html image_src='help/cute-dog-blue-top.jpg' image_alt='Cute dog with blue top' %}
+
+&lt;p&gt;
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vulputate iaculis blandit. Vestibulum cursus commodo volutpat. Curabitur laoreet eget dolor nec tristique. Fusce placerat, odio sit amet viverra malesuada, sem velit posuere mauris, ac adipiscing nisl neque id quam. Sed eu varius nisl. Nam sed accumsan risus. Donec sollicitudin magna ut tortor fermentum, et luctus neque ornare. Nam in sodales nulla, vitae faucibus neque. In hac habitasse platea dictumst.
+&lt;/p&gt;
+{% endraw %}</pre>
+  {% include breakout-image-float-right-narrow.html image_src='help/cute-dog-blue-top.jpg' image_alt='Cute dog with blue top' %}
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vulputate iaculis blandit. Vestibulum cursus commodo volutpat. Curabitur laoreet eget dolor nec tristique. Fusce placerat, odio sit amet viverra malesuada, sem velit posuere mauris, ac adipiscing nisl neque id quam. Sed eu varius nisl. Nam sed accumsan risus. Donec sollicitudin magna ut tortor fermentum, et luctus neque ornare. Nam in sodales nulla, vitae faucibus neque. In hac habitasse platea dictumst.</p>
+
+  <h4 id="breakout-image-float-right-column">Breakout Image Float Right Column</h4>
+  <p>Image should be at least 436px wide. Should never be smaller than 218px wide.</p>
+  <h5>With Caption</h5>
+  <pre>{% raw %}
+{% include breakout-image-float-right-column.html image_src='help/cute-dog-blue-top.jpg' image_alt='Cute dog with blue top' caption='A cute dog from &lt;a href="http://www.candogseat-this.com/cute-dogs-month-december/cute-dog-3/"&gt;candogseat-this.com&lt;/a&gt;' %}
+
+&lt;p&gt;
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vulputate iaculis blandit. Vestibulum cursus commodo volutpat. Curabitur laoreet eget dolor nec tristique. Fusce placerat, odio sit amet viverra malesuada, sem velit posuere mauris, ac adipiscing nisl neque id quam. Sed eu varius nisl. Nam sed accumsan risus. Donec sollicitudin magna ut tortor fermentum, et luctus neque ornare. Nam in sodales nulla, vitae faucibus neque. In hac habitasse platea dictumst.
+&lt;/p&gt;
+{% endraw %}</pre>
+  {% include breakout-image-float-right-column.html image_src='help/cute-dog-blue-top.jpg' image_alt='Cute dog with blue top' caption='A cute dog from <a href="http://www.candogseat-this.com/cute-dogs-month-december/cute-dog-3/">candogseat-this.com</a>' %}
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vulputate iaculis blandit. Vestibulum cursus commodo volutpat. Curabitur laoreet eget dolor nec tristique. Fusce placerat, odio sit amet viverra malesuada, sem velit posuere mauris, ac adipiscing nisl neque id quam. Sed eu varius nisl. Nam sed accumsan risus. Donec sollicitudin magna ut tortor fermentum, et luctus neque ornare. Nam in sodales nulla, vitae faucibus neque. In hac habitasse platea dictumst.</p>
+
+  <h5>Without Caption</h5>
+    <pre>{% raw %}
+{% include breakout-image-float-right-column.html image_src='help/cute-dog-blue-top.jpg' image_alt='Cute dog with blue top' %}
+
+&lt;p&gt;
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vulputate iaculis blandit. Vestibulum cursus commodo volutpat. Curabitur laoreet eget dolor nec tristique. Fusce placerat, odio sit amet viverra malesuada, sem velit posuere mauris, ac adipiscing nisl neque id quam. Sed eu varius nisl. Nam sed accumsan risus. Donec sollicitudin magna ut tortor fermentum, et luctus neque ornare. Nam in sodales nulla, vitae faucibus neque. In hac habitasse platea dictumst.
+&lt;/p&gt;
+{% endraw %}</pre>
+  {% include breakout-image-float-right-column.html image_src='help/cute-dog-blue-top.jpg' image_alt='Cute dog with blue top' %}
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vulputate iaculis blandit. Vestibulum cursus commodo volutpat. Curabitur laoreet eget dolor nec tristique. Fusce placerat, odio sit amet viverra malesuada, sem velit posuere mauris, ac adipiscing nisl neque id quam. Sed eu varius nisl. Nam sed accumsan risus. Donec sollicitudin magna ut tortor fermentum, et luctus neque ornare. Nam in sodales nulla, vitae faucibus neque. In hac habitasse platea dictumst.</p>
+
+  <h3 id="embed-includes">Embed Includes</h3>
+  <h4 id="breakout-embed-youtube-right-caption">Breakout Embed Youtube Right Caption</h4>
+  <h5>With Caption</h5>
+  <pre>{% raw %}{% include breakout-embed-youtube-right-caption.html code='SfammxKoUYs' caption='This dog loves pickles' %}{% endraw %}</pre>
+  {% include breakout-embed-youtube-right-caption.html code='SfammxKoUYs' caption='This dog loves pickles' %}
+
+  <h5>Without Caption</h5>
+  <pre>{% raw %}{% include breakout-embed-youtube-right-caption.html code='SfammxKoUYs' %}{% endraw %}</pre>
+  {% include breakout-embed-youtube-right-caption.html code='SfammxKoUYs' %}
+
+  <h5>4 by 3 Aspect Ratio</h5>
+  <pre>{% raw %}{% include breakout-embed-youtube-right-caption.html code='zlPb8vsvcoM' caption='Cute dog falling asleep' 4by3=true %}{% endraw %}</pre>
+  {% include breakout-embed-youtube-right-caption.html code='zlPb8vsvcoM' caption='Cute dog falling asleep' 4by3=true %}
+
+  <h4 id="breakout-embed-youtube-below-caption">Breakout Embed Youtube Below Caption</h4>
+  <h5>With Caption</h5>
+  <pre>{% raw %}{% include breakout-embed-youtube-below-caption.html code='SfammxKoUYs' caption='This dog loves pickles' %}{% endraw %}</pre>
+  {% include breakout-embed-youtube-below-caption.html code='SfammxKoUYs' caption='This dog loves pickles' %}
+
+  <h5>Without Caption</h5>
+  <pre>{% raw %}{% include breakout-embed-youtube-below-caption.html code='SfammxKoUYs' %}{% endraw %}</pre>
+  {% include breakout-embed-youtube-below-caption.html code='SfammxKoUYs' %}
+
+  <h5>4 by 3 Aspect Ratio</h5>
+  <pre>{% raw %}{% include breakout-embed-youtube-below-caption.html code='zlPb8vsvcoM' caption='Cute dog falling asleep' 4by3=true %}{% endraw %}</pre>
+  {% include breakout-embed-youtube-below-caption.html code='zlPb8vsvcoM' caption='Cute dog falling asleep' 4by3=true %}
+
+  <h4 id="breakout-embed-vimeo-right-caption">Breakout Embed Vimeo Right Caption</h4>
+  <h5>With Caption</h5>
+  <pre>{% raw %}{% include breakout-embed-vimeo-right-caption.html code='16897464' caption='The Hoxton Window Project: Jon Burgerman @ unit9' %}{% endraw %}</pre>
+  {% include breakout-embed-vimeo-right-caption.html code='16897464' caption='The Hoxton Window Project: Jon Burgerman @ unit9' %}
+
+  <h5>Without Caption</h5>
+  <pre>{% raw %}{% include breakout-embed-vimeo-right-caption.html code='16897464' %}{% endraw %}</pre>
+  {% include breakout-embed-vimeo-right-caption.html code='16897464' %}
+
+  <h5>4 by 3 Aspect Ratio</h5>
+  <pre>{% raw %}{% include breakout-embed-vimeo-right-caption.html code='97194360' 4by3=true %}{% endraw %}</pre>
+  {% include breakout-embed-vimeo-right-caption.html code='97194360' 4by3=true %}
+
+  <h4 id="breakout-embed-youtube-below-caption">Breakout Embed Youtube Below Caption</h4>
+  <h5>With Caption</h5>
+  <pre>{% raw %}{% include breakout-embed-vimeo-below-caption.html code='16897464' caption='The Hoxton Window Project: Jon Burgerman @ unit9' %}{% endraw %}</pre>
+  {% include breakout-embed-vimeo-below-caption.html code='16897464' caption='The Hoxton Window Project: Jon Burgerman @ unit9' %}
+
+  <h5>Without Caption</h5>
+  <pre>{% raw %}{% include breakout-embed-vimeo-below-caption.html code='16897464' %}{% endraw %}</pre>
+  {% include breakout-embed-vimeo-below-caption.html code='16897464' %}
+
+  <h5>4 by 3 Aspect Ratio</h5>
+  <pre>{% raw %}{% include breakout-embed-vimeo-below-caption.html code='97194360' 4by3=true %}'Cute dog falling asleep' 4by3=true %}{% endraw %}</pre>
+  {% include breakout-embed-vimeo-below-caption.html code='97194360' 4by3=true %}'Cute dog falling asleep' 4by3=true %}
+
+</article>

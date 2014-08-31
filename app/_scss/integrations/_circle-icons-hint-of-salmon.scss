@@ -1,0 +1,11 @@
+.hint-of-salmon-theme {
+  .circle-icon {
+    &:focus, &:hover, &:active {
+      border-color: $salmon;
+      background-color: $salmon;
+      &.outline {
+        color: $salmon !important;
+      }
+    }
+  }
+}

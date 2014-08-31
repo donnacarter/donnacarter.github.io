@@ -1,0 +1,15 @@
+---
+layout: header-page
+---
+<div class="basic-strip post-header">
+  <section class="left-sidebar sticky-col {{ page.section_extra_classes }}">
+    <div class="right-col shove-right">
+      {{ content }}
+    </div>
+    <div class="left-col teleport-over stick">
+      <div class="left-col-wrapper sticky-insert"></div>
+    </div>
+  </section>
+</div>
+
+{% contentblock post_sticky %}

@@ -1,0 +1,21 @@
+<figure class="media-caption breakout-media-below-caption-trio">
+  <div class="media-group">
+    <div class="media-wrapper image-one">
+      {% capture classname %}media-image{% if include.image_1_border %} media-image-with-border {% endif %}{% endcapture %}
+      {% picture trio_all_but_sidebar {{ include.image_1_src }} class="{{ classname }}" alt="{{ include.image_1_alt }}" %}
+    </div>
+    <div class="media-wrapper image-two">
+      {% capture classname %}media-image{% if include.image_2_border %} media-image-with-border {% endif %}{% endcapture %}
+      {% picture trio_all_but_sidebar {{ include.image_2_src }} class="{{ classname }}" alt="{{ include.image_2_alt }}" %}
+    </div>
+    <div class="media-wrapper image-three">
+      {% capture classname %}media-image{% if include.image_3_border %} media-image-with-border {% endif %}{% endcapture %}
+      {% picture trio_all_but_sidebar {{ include.image_3_src }} class="{{ classname }}" alt="{{ include.image_3_alt }}" %}
+    </div>
+  </div>
+  {% if include.caption %}
+  <div class="caption-wrapper">
+    <figcaption class="caption">{{ include.caption }}</figcaption>
+  </div>
+  {% endif %}
+</figure>

@@ -1,0 +1,14 @@
+.breakout-media-below-caption-pair {
+  @include breakout-thin-right;
+  .media-group {
+    @extend .row;
+  }
+  .image-one, .image-two {
+    margin-bottom: $grid-basic-padding;
+    @media (min-width: $screen-xs-min) {
+      @include make-xs-column(6);
+      margin-bottom: 0;
+    }
+  }
+
+}

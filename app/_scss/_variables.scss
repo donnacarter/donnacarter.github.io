@@ -1,0 +1,50 @@
+$icon-font-path: "../_bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+$fa-font-path: "../_bower_components/font-awesome/fonts/";
+
+$font-family-sans-serif: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif: Bitter, Georgia, "Times New Roman", Times, serif;
+
+$line-height-base: 1.7;
+
+$main-purple:            #7b3275;
+$light-purple:           #ae4e98;
+$teal:                   #abd7cb;
+$teal-light-green:       #b3efd0;
+$teal-dark-green:        #408f71;
+$teal-darker:            #7ea399;
+$teal-bright:            #17b09f;
+$teal-semi-bright:       #52c0b1;
+$white-hint-of-teal:     #f2f9f7;
+$salmon:                 #e4626c;
+$lighter-salmon:         #f78d98;
+$darker-salmon:          #e24252;
+$yellow:                 #fdd11b;
+$darker-yellow:          #eabf0a;
+$brighter-yellow:        #fce61d;
+$light-grey:             #e1e1e0;
+$light-medium-grey:      lighten(#848484, 15%);
+$medium-grey:            #848484;
+$dark-grey:              #5a5a5a;
+$very-dark-grey:         darken(#5a5a5a, 10%);
+
+$text-color:             $medium-grey;
+$link-color:             $very-dark-grey;
+
+$navbar-height:          90px;
+$navbar-smallscreen-height: 60px;
+$screen-short-max:       400px;
+
+$strip-vertical-padding-ltxs: 30px;
+$strip-vertical-padding-xs: 45px;
+$strip-vertical-padding-sm: 60px;
+
+$font-size-sm-boost: 115%;
+$font-size-lg-boost: 122%;
+
+$grid-gutter-width: 30px;
+$grid-basic-padding: ($grid-gutter-width / 2);
+
+$main-header-height-xs: 270px;
+$main-header-height-sm: 320px;
+$main-header-height-md: 380px;
+$main-header-height-lg: 430px;

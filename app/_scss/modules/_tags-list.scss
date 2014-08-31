@@ -1,0 +1,32 @@
+.tags-list {
+  @extend .list-inline;
+  margin-left: 0;
+  margin-bottom: 1em;
+  .tag-item {
+    padding-left: 0;
+    padding-right: 0;
+    display: inline;
+    font-weight: bold;
+    &:after {
+      content: ', ';
+    }
+    &:last-of-type {
+      &:after {
+        content: '';
+      }
+    }
+  }
+  font-size: 90%;
+
+  @media (min-width: $screen-xs-min) {
+    font-size: 100%;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    font-size: $font-size-sm-boost;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    font-size: $font-size-lg-boost;
+  }
+}

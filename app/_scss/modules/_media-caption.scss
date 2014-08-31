@@ -1,0 +1,22 @@
+.media-caption {
+  margin-bottom: 1em;
+  .caption {
+    margin-top: 1em;
+    color: $light-medium-grey;
+    border-top: 1px dashed $light-grey;
+    padding-top: 0.75em;
+    font-style: italic;
+  }
+  .media-wrapper {
+  }
+  .media-image {
+    @extend .img-responsive;
+    margin: auto;
+    &.media-image-with-border {
+      border: 1px solid $light-grey;
+    }
+  }
+  @media(min-width: $screen-xs-min) {
+    font-size: 80%;
+  }
+}

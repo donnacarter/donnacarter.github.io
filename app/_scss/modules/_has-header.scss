@@ -1,0 +1,26 @@
+.has-header {
+  .post-header-wrapper {
+    position: relative;
+    margin-top: $main-header-height-xs;
+    z-index: 20;
+    .csspositionsticky & {
+      // fixes a bug in safari where position:relative z-index messes up going over position:fixed
+      transform: translate3d(0,0,0);
+    }
+    background-color: white;
+    padding-top: $strip-vertical-padding-ltxs;
+    @media(min-width: $screen-xs-min) {
+      padding-top: $strip-vertical-padding-xs;
+    }
+    @media(min-width: $screen-sm-min) {
+      padding-top: $strip-vertical-padding-sm;
+      margin-top: $main-header-height-sm;
+    }
+    @media(min-width: $screen-md-min) {
+      margin-top: $main-header-height-md;
+    }
+    @media(min-width: $screen-lg-min) {
+      margin-top: $main-header-height-lg;
+    }
+  }
+}

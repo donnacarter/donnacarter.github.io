@@ -1,0 +1,7 @@
+.basic-strip {
+  @include strip('true', 'false');
+  @extend .container;
+  &.post-header {
+    margin-top: 0;
+  }
+}

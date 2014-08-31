@@ -1,0 +1,78 @@
+.teal-theme {
+  background-color: $teal;
+  background: $teal url(../images/textures/teal-texture.jpg) repeat 50% 0 fixed;
+  color: white;
+  .header-link {
+    color: white;
+    &:focus, &:hover, &:active {
+      color: white;
+      border-color: $teal-dark-green;
+    }
+  }
+}
+
+.hint-of-teal-theme {
+  a {
+    &:focus, &:hover, &:active {
+      color: $teal-bright;
+    }
+  }
+  blockquote {
+    border-color: $teal;
+  }
+}
+
+.salmon-theme {
+  background-color: $salmon;
+  background: $salmon url(../images/textures/salmon-texture.jpg) repeat 50% 0 fixed;
+  color: white;
+}
+
+.hint-of-salmon-theme {
+  a {
+    &:focus, &:hover, &:active {
+      color: $salmon;
+    }
+  }
+  blockquote {
+    border-color: $lighter-salmon;
+  }
+}
+
+.grey-theme {
+  background-color: $light-grey;
+  background: $light-grey url(../images/textures/light-grey-texture.jpg) repeat 50% 0 fixed;
+  color: $medium-grey;
+  h1, h2, h3, h4, h5, h6 {
+    color: $dark-grey;
+  }
+}
+
+.yellow-theme {
+  background-color: $yellow;
+  background: $yellow url(../images/textures/yellow-texture.jpg) repeat 50% 0 fixed;
+  color: white;
+}
+
+.hint-of-yellow-theme {
+  a {
+    &:focus, &:hover, &:active {
+      color: $darker-yellow;
+    }
+  }
+  blockquote {
+    border-color: $yellow;
+  }
+}
+
+.purple-theme {
+  background-color: $main-purple;
+  background-color: rgba($main-purple, 0.9);
+  color: rgba(white, 0.8);
+  a {
+    color: white;
+    &:focus, &:hover, &:active {
+      color: $teal-light-green;
+    }
+  }
+}

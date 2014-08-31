@@ -1,0 +1,8 @@
+.breakout-thin-right {
+  @media (min-width: $screen-md-min) {
+    width: ($col-width-md * 9) - ($grid-basic-padding * 2);
+  }
+  @media (min-width: $screen-lg-min) {
+    width: ($col-width-lg * 9) - ($grid-basic-padding * 2);
+  }
+}
