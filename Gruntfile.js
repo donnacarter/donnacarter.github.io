@@ -101,7 +101,8 @@ module.exports = function (grunt) {
         '.tmp',
         '.jekyll/*',
         '!.jekyll/generated-images'
-      ]
+      ],
+      distHelp: '<%= yeoman.dist %>/help',
     },
     compass: {
       options: {
@@ -224,7 +225,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>',
-          src: '**/*.{jpg,jpeg,png}',
+          src: 'images/**/*.{jpg,jpeg,png}',
           dest: '<%= yeoman.dist %>'
         }]
       }
@@ -234,7 +235,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>',
-          src: '**/*.svg',
+          src: 'images/**/*.svg',
           dest: '<%= yeoman.dist %>'
         }]
       }
@@ -270,6 +271,15 @@ module.exports = function (grunt) {
           src: '**/*.css',
           dest: '.tmp/css'
         }]
+      },
+      generatedImages: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: '.jekyll/generated-images',
+          src: '**/*',
+          dest: '<%= yeoman.dist %>/generated-images'
+        }]
       }
     },
     filerev: {
@@ -282,8 +292,9 @@ module.exports = function (grunt) {
             '<%= yeoman.dist %>/js/**/*.js',
             '<%= yeoman.dist %>/css/**/*.css',
             '<%= yeoman.dist %>/images/**/*.{gif,jpg,jpeg,png,svg,webp}',
+            '<%= yeoman.dist %>/generated-images/**/*.{gif,jpg,jpeg,png,svg,webp}',
             '<%= yeoman.dist %>/fonts/**/*.{eot*,otf,svg,ttf,woff}',
-            '<%= yeoman.dist %>/_bower_components/**/*.*',
+            '<%= yeoman.dist %>/_bower_components/*/**/*.{js,css,gif,jpg,jpeg,png,svg,webp,eot*,otf,svg,ttf,woff}',
           ]
         }]
       }
@@ -372,15 +383,17 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean',
+    'copy:generatedImages'
     // Jekyll cleans files from the target directory, so must run first
     'jekyll:dist',
+    'clean:distHelp',
     'concurrent:dist',
     'useminPrepare',
     'concat',
     'autoprefixer:dist',
     'cssmin',
     'uglify',
-    'imagemin',
+    // 'imagemin',
     'svgmin',
     'filerev',
     'usemin',

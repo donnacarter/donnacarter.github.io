@@ -1,3 +1,5 @@
+# This is a rather hacked away at version of the script below.
+
 # Title: Jekyll Picture Tag
 # Authors: Rob Wierzbowski : @robwierzbowski
 #          Justin Reese    : @justinxreese
