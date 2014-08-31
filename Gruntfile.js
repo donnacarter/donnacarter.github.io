@@ -296,6 +296,7 @@ module.exports = function (grunt) {
             '<%= yeoman.dist %>/js/**/*.js',
             '<%= yeoman.dist %>/css/**/*.css',
             '<%= yeoman.dist %>/images/**/*.{gif,jpg,jpeg,png,svg,webp}',
+            '<%= yeoman.dist %>/generated-images/**/*.{gif,jpg,jpeg,png,svg,webp}',
             '<%= yeoman.dist %>/fonts/**/*.{eot*,otf,svg,ttf,woff}',
             '<%= yeoman.dist %>/_bower_components/*/**/*.{js,css,gif,jpg,jpeg,png,svg,webp,eot*,otf,svg,ttf,woff}',
           ]
@@ -305,7 +306,7 @@ module.exports = function (grunt) {
     buildcontrol: {
       dist: {
         options: {
-          remote: '../',
+          remote: 'git@github.com:donnacarter/donnacarter.co.uk.git',
           branch: 'gh-pages',
           commit: true,
           push: true
