@@ -8,34 +8,6 @@
     {% capture title %}{% if contentblock_title != '' %}{{ contentblock_title }}{% else %}{{ page.title }}{% endif %}{% endcapture %}
     <title>{{ title }}</title>
 
-    {% capture contentblock_meta_description %}{% contentblock meta_description %}{% endcapture %}
-    {% capture meta_description %}{% if contentblock_meta_description != '' %}{{ contentblock_meta_description }}{% else %}{{ page.meta_description }}{% endif %}{% endcapture %}
-    <meta name="description" content="{{ meta_description }}">
-
-    <meta property="og:title" content="{{ title }}">
-
-    {% capture meta_og_type %}{% contentblock meta_og_type %}{% endcapture %}
-    <meta property="og:type" content="{{ meta_og_type | default:'website' }}">
-    {% if meta_og_type == 'article' %}
-      <meta property="og:article:author" content="https://www.facebook.com/donna.carter.14289">
-      {% contentblock meta_og_article_tags %}
-    {% endif %}
-    <meta property="og:description" content="{{ meta_description }}">
-    <meta property="og:locale" content="en_GB">
-    <meta property="og:site_name" content="Donna Carter">
-    <meta property="og:url" content="{% contentblock canonical_url %}">
-    {% capture contentblock_meta_image %}{% contentblock meta_image %}{% endcapture %}
-    {% capture meta_image %}{% if contentblock_meta_image != '' %}{{ contentblock_meta_image }}{% else %}{% endif %}{% endcapture %}
-    <meta property="og:image" content="{{ meta_image }}">
-    <meta property="fb:profile_id" content="908020524">
-
-    {% capture meta_twitter_card %}{% contentblock meta_twitter_card %}{% endcapture %}
-    <meta property="twitter:card" content="{{ meta_twitter_card | default:'summary' }}">
-    <meta property="twitter:title" content="{{ title }}">
-    <meta property="twitter:site" content="@le_beau">
-    <meta property="twitter:description" content="{{ meta_description}}">
-    <meta property="twitter:image" content="{{ meta_image }}">
-
     <script>
 (function() {
     WebFontConfig = {
@@ -69,6 +41,45 @@
     <script src="/js/modernizr-dc-scroll.js"></script>
     <script src="/_bower_components/picturefill/dist/picturefill.js"></script>
     <!-- endbuild -->
+
+    <link rel="shortcut icon" href="/icons/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/icons/dc-logo-purple-152.png">
+    <link rel="shortcut icon" sizes="192x192" href="/icons/dc-logo-purple-192.png">
+
+    {% capture contentblock_meta_description %}{% contentblock meta_descriptio
+    {% capture meta_description %}{% if contentblock_meta_description != '' %}
+    <meta name="description" content="{{ meta_description }}">
+
+    <meta property="og:title" content="{{ title }}">
+
+    {% capture contentblock_meta_description %}{% contentblock meta_description %}{% endcapture %}
+    {% capture meta_description %}{% if contentblock_meta_description != '' %}{{ contentblock_meta_description }}{% else %}{{ page.meta_description }}{% endif %}{% endcapture %}
+    <meta name="description" content="{{ meta_description }}">
+
+    <meta property="og:title" content="{{ title }}">
+
+    {% capture meta_og_type %}{% contentblock meta_og_type %}{% endcapture %}
+    <meta property="og:type" content="{{ meta_og_type | default:'website' }}">
+    {% if meta_og_type == 'article' %}
+      <meta property="og:article:author" content="https://www.facebook.com/donna.carter.14289">
+      {% contentblock meta_og_article_tags %}
+    {% endif %}
+    <meta property="og:description" content="{{ meta_description }}">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:site_name" content="Donna Carter">
+    <meta property="og:url" content="{% contentblock canonical_url %}">
+    {% capture contentblock_meta_image %}{% contentblock meta_image %}{% endcapture %}
+    {% capture meta_image %}{% if contentblock_meta_image != '' %}{{ contentblock_meta_image }}{% else %}{{ site.protocol }}://{{ site.host }}/images/icons/dc-logo-purple-1200.png{% endif %}{% endcapture %}
+    <meta property="og:image" content="{{ meta_image }}">
+    <meta property="fb:profile_id" content="908020524">
+
+    {% capture meta_twitter_card %}{% contentblock meta_twitter_card %}{% endcapture %}
+    <meta property="twitter:card" content="{{ meta_twitter_card | default:'summary' }}">
+    <meta property="twitter:title" content="{{ title }}">
+    <meta property="twitter:site" content="@le_beau">
+    <meta property="twitter:description" content="{{ meta_description}}">
+    <meta property="twitter:image" content="{{ meta_image }}">
+
   </head>
   <body class="{% if page.has_header %}has-header{% endif %} {% if page.theme %}hint-of-{{page.theme}}-theme{% endif %}">
     <nav role="navigation" class="global-navbar top-of-screen">
