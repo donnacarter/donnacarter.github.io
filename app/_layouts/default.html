@@ -42,12 +42,13 @@
     <script src="/_bower_components/picturefill/dist/picturefill.js"></script>
     <!-- endbuild -->
 
-    <link rel="shortcut icon" href="/icons/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/icons/dc-logo-purple-152.png">
-    <link rel="shortcut icon" sizes="192x192" href="/icons/dc-logo-purple-192.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/images/icons/dc-logo-purple-152.png">
+    <link rel="shortcut icon" sizes="192x192" href="/images/icons/dc-logo-purple-192.png">
 
-    {% capture contentblock_meta_description %}{% contentblock meta_descriptio
-    {% capture meta_description %}{% if contentblock_meta_description != '' %}
+    {% capture contentblock_meta_description %}{% contentblock meta_description %}{% endcapture %}
+    {% capture meta_description %}{% if contentblock_meta_description != '' %}{{ contentblock_meta_description }}{% else %}{{ page.meta_description }}{% endif %}{% endcapture %}
+
     <meta name="description" content="{{ meta_description }}">
 
     <meta property="og:title" content="{{ title }}">
