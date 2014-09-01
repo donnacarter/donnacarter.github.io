@@ -1,5 +1,5 @@
 module DonnaCarter
-  class Pager < Jekyll::Pager
+  class Pager < Jekyll::Paginate::Pager
     def initialize(site, page, all_posts, num_pages = nil, per_page, dir)
       @page = page
       @per_page = per_page

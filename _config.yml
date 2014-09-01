@@ -36,26 +36,30 @@ markdown: redcarpet
 
 paginate_path: "page-:num/"
 
+permalink: :categories/:title/
+defaults:
+  -
+    scope:
+      path: journal
+      type: posts
+    values:
+      layout: journal-post
+      categories:
+      - journal
+  -
+    scope:
+      path: work
+      type: posts
+    values:
+      layout: work-post
+      categories:
+      - work
+
 picture:
   source: images/fullsize
   output: generated-images
   markup: picture
   presets:
-    # # Full width pictures
-    # default:
-    #   ppi: [1, 1.5]
-    #   attr:
-    #     class: blog-full
-    #     itemprop: image
-    #   source_lrg:
-    #     media: "(min-width: 40em)"
-    #     width: 700
-    #   source_med:
-    #     media: "(min-width: 30em)"
-    #     width: 450
-    #   source_default:
-    #     width: 350
-    #     height: 200
     home_page_hero:
       ppi: [1, 2]
       attr:

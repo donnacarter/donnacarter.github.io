@@ -32,7 +32,7 @@ module.exports = function (grunt) {
       jekyll: {
         files: [
           '<%= yeoman.app %>/**/*.{html,yml,md,mkd,markdown}',
-          '!<%= yeoman.app %>/_bower_components/**/*'
+          '!<%= yeoman.app %>/bower-components/**/*'
         ],
         tasks: ['jekyll:server']
       },
@@ -117,8 +117,7 @@ module.exports = function (grunt) {
         relativeAssets: false,
         httpImagesPath: '/images',
         httpGeneratedImagesPath: '/images/generated',
-        outputStyle: 'expanded',
-        raw: 'extensions_dir = "<%= yeoman.app %>/_bower_components"\n'
+        outputStyle: 'expanded'
       },
       dist: {
         options: {
@@ -258,7 +257,7 @@ module.exports = function (grunt) {
             'js/**/*',
             // Like Jekyll, exclude files & folders prefixed with an underscore.
             '!**/_*{,/**}',
-            '_bower_components{,/**}/*.{js,css,png,svg,jpg,jpeg,gif,eot,ttf,woff}'
+            'bower-components{,/**}/*.{js,css,png,svg,jpg,jpeg,gif,eot,ttf,woff}'
             // Explicitly add any files your site needs for distribution here.
             //'favicon.ico',
             //'apple-touch*.png'
@@ -297,7 +296,7 @@ module.exports = function (grunt) {
             '<%= yeoman.dist %>/css/**/*.css',
             '<%= yeoman.dist %>/images/**/*.{gif,jpg,jpeg,png,svg,webp}',
             '<%= yeoman.dist %>/fonts/**/*.{eot*,otf,svg,ttf,woff}',
-            '<%= yeoman.dist %>/_bower_components/*/**/*.{js,css,gif,jpg,jpeg,png,svg,webp,eot*,otf,svg,ttf,woff}',
+            '<%= yeoman.dist %>/bower-components/*/**/*.{js,css,gif,jpg,jpeg,png,svg,webp,eot*,otf,svg,ttf,woff}',
           ]
         }]
       }

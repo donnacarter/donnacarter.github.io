@@ -1,11 +1,11 @@
 source "http://rubygems.org"
 
-gem 'jekyll', '~>2.0'
+gem 'jekyll'
 gem 'redcarpet'
-gem 'compass', '>=0.12'
+gem 'compass'
 gem 'sass-globbing'
 gem 'sass-css-importer'
 gem 'stringex'
-gem 'jekyll-contentblocks'
+gem 'jekyll-contentblocks', github: 'kevindew/jekyll-contentblocks'
 gem 'mini_magick'
 gem 'nokogiri'
