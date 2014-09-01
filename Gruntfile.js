@@ -446,8 +446,8 @@ module.exports = function (grunt) {
     'concurrent:dist',
     'modernizr:dist',
     'useminPrepare',
+    'autoprefixer:server', // the sass is in the .tmp dir when running a dist build
     'concat',
-    'autoprefixer:dist',
     'cssmin',
     'uglify',
     // 'imagemin',
