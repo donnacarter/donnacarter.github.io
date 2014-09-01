@@ -4,18 +4,22 @@
   }
 
   .journal-summary-image-wrapper {
-    display: none;
+    margin: auto;
+    max-width: 290px;
+    display: block;
+    margin-bottom: $grid-basic-padding;
   }
 
   .journal-summary-title {
     line-height: 1.4;
-    margin-top: 0;
-    margin-bottom: 0.5em;
+    margin: 0 0 0.5em;
     @include border-transition;
     font-size: 133.33%;
   }
 
   .journal-summary-title-link {
+    margin: -0.5em -0.25em;
+    padding: 0.5em 0.25em;
     &:hover, &:active, &:focus {
       text-decoration: none;
     }
@@ -32,6 +36,7 @@
   }
 
   .journal-summary-content {
+    margin: 0;
   }
 
   $image-width: 160px;

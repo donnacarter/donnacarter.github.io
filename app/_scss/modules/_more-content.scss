@@ -7,10 +7,11 @@
     .left-col, .right-col {
       @extend .col-lg-6;
       @include clearfix;
-      margin: ($grid-basic-padding * 2) $grid-basic-padding;
+      margin: $grid-basic-padding;
       padding: 0;
     }
     .left-col {
+      padding-bottom: $grid-basic-padding;
       border-bottom: 1px solid $light-grey;
     }
     @media (min-width: $screen-lg-min) {

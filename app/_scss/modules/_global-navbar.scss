@@ -26,7 +26,7 @@
     transform: translateY(-100%);
   }
 
-  &.top-of-screen {
+  .dcscroll &.top-of-screen {
     background-color: $main-purple;
   }
 

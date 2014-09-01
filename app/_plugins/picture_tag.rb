@@ -253,6 +253,12 @@ module Jekyll
         puts "Generating #{gen_name}"
 
         # Scale and crop
+        image.strip
+        if image["format"] == 'JPEG'
+          image.quality 80
+          image.depth 8
+          image.interlace "plane"
+        end
         image.combine_options do |i|
           i.resize "#{gen_width}x#{gen_height}^"
           i.gravity "center"
