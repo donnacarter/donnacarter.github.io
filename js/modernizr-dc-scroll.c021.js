@@ -1,1 +1,0 @@
-Modernizr.addTest('dcscroll', true);
