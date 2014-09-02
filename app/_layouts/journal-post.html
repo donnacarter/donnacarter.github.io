@@ -44,6 +44,19 @@ theme: teal
   {% endif %}
 {% endfor %}
 
+{% assign previous_post = page|previous_in_category %}
+{% assign next_post = page|previous_in_category %}
+{% if previous_post and next_post %}
+  {% assign first_post = previous_post %}
+  {% assign second_post = next_post %}
+{% elsif previous_post %}
+  {% assign first_post = page|previous_previous_in_category %}
+  {% assign second_post = previous_post %}
+{% elsif next_post %}
+  {% assign first_post = next_post %}
+  {% assign second_post = page|next_next_in_category %}
+{% endif %}
+
 <article class="main-content">
   {{ content }}
 </article>
@@ -70,21 +83,23 @@ theme: teal
 </section>
 
 {% contentfor post_sticky %}
-<div class="basic-strip">
-  <section class="more-content">
-    <header class="more-content-header">
-      <h3 class="more-content-header-title">More Posts</h3>
-    </header>
-    <div class="more-content-body">
-      <div class="left-col">
-        {% include journal-summary.html post=first_post extra_classes='journal-summary-more' title_element='h4' %}
-      </div>
-      <div class="right-col">
-        {% include journal-summary.html post=second_post extra_classes='journal-summary-more' title_element='h4' %}
-      </div>
+  {% if first_post and second_post %}
+    <div class="basic-strip">
+      <section class="more-content">
+        <header class="more-content-header">
+          <h3 class="more-content-header-title">More Posts</h3>
+        </header>
+        <div class="more-content-body">
+          <div class="left-col">
+            {% include journal-summary.html post=first_post extra_classes='journal-summary-more' title_element='h4' %}
+          </div>
+          <div class="right-col">
+            {% include journal-summary.html post=second_post extra_classes='journal-summary-more' title_element='h4' %}
+          </div>
+        </div>
+      </section>
     </div>
-  </section>
-</div>
+  {% endif %}
 {% endcontentfor %}
 
 {% contentfor footer_scripts %}
