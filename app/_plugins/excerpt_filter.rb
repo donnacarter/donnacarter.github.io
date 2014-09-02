@@ -4,8 +4,8 @@ module Jekyll
   module ExcerptFilter
     def excerpt(raw)
       # remove any liquid tags
-      raw.sub! /{({|%).*?(%|})}/, ''
-      doc = Nokogiri::HTML(raw)
+      without_liquid = raw.gsub /{({|%).*?(%|})}/, ''
+      doc = Nokogiri::HTML(without_liquid)
       first_p = doc.css('p')[0]
       # @todo make this error if no paragraph
       first_p ? first_p.text.strip : ''
