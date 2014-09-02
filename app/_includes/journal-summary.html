@@ -1,22 +1,22 @@
 {% capture title_element %}{% if include.title_element %}{{ include.title_element }}{% else %}h3{% endif %}{% endcapture %}
-<article class="journal-summary {{ include.extra_classes }}">
+<article class="post-summary {{ include.extra_classes }}">
   <header class="header">
-    <{{title_element}} class="journal-summary-title">
-      <a href="{{ include.post.url }}" class="journal-summary-title-link">
+    <{{title_element}} class="post-summary-title">
+      <a href="{{ include.post.url }}" class="post-summary-title-link">
         {{ include.post.title }}
       </a>
     </{{title_element}}>
-    <time class="journal-summary-date" datetime="{{ include.post.date | date: "%Y-%m-%d" }}">
+    <time class="post-summary-sub-title" datetime="{{ include.post.date | date: "%Y-%m-%d" }}">
       {{ include.post.date | date: "%d.%m.%y" }}
     </time>
   </header>
   <div class="body">
     {% if include.post.thumbnail %}
-    <a href="{{ include.post.url }}" class="journal-summary-image-wrapper">
-      {% picture journal_thumbnail {{ include.post.thumbnail }} class="journal-summary-image" alt="{{ include.post.thumbnail_alt }}" %}
+    <a href="{{ include.post.url }}" class="post-summary-image-wrapper">
+      {% picture post_summary_thumbnail {{ include.post.thumbnail }} class="post-summary-image" alt="{{ include.post.thumbnail_alt }}" %}
     </a>
     {% endif %}
-    <p class="journal-summary-content">
+    <p class="post-summary-content">
       {% if include.post.description %}
         {{ include.post.description | truncate: 160 }}
       {% else %}

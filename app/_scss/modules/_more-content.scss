@@ -29,6 +29,15 @@
         padding-left: $grid-basic-padding * 2;
         padding-right: $grid-basic-padding;
       }
+
+      &.border-left {
+        .left-col {
+          border-right: 1px solid $light-grey;
+        }
+        .right-col {
+          border-left: 0;
+        }
+      }
     }
   }
 }

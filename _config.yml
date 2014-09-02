@@ -189,7 +189,7 @@ picture:
       source_default:
         width: 290
 
-    journal_thumbnail:
+    post_summary_thumbnail:
       ppi: [1, 2]
       attr:
         itemprop: image
@@ -197,6 +197,10 @@ picture:
         media: '(min-width: 768px)'
         width: 220
         height: 220
+      source_xs:
+        media: '(min-width: 480px)'
+        width: 160
+        height: 160
       source_default:
         width: 290
         height: 290

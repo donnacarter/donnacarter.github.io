@@ -1,21 +1,21 @@
-<article class="work-summary {{ include.extra_classes }}">
+<article class="post-summary image-left {{ include.extra_classes }}">
   <header class="header">
-    <h4 class="work-summary-title">
-      <a href="{{ include.post.url }}" class="work-summary-title-link">
+    <h4 class="post-summary-title">
+      <a href="{{ include.post.url }}" class="post-summary-title-link">
         {{ include.post.title }}
       </a>
     </h4>
-    <h5 class="work-summary-sub-title">
+    <h5 class="post-summary-sub-title">
       {{ include.post.disciplines | join: ', ' }}
     </time>
   </header>
   <div class="body">
     {% if include.post.thumbnail %}
-    <a href="{{ include.post.url }}" class="work-summary-image-wrapper">
-      {% picture journal_thumbnail {{ include.post.thumbnail }} class="work-summary-image" alt="{{ include.post.thumbnail_alt }}" %}
+    <a href="{{ include.post.url }}" class="post-summary-image-wrapper">
+      {% picture post_summary_thumbnail {{ include.post.thumbnail }} class="post-summary-image" alt="{{ include.post.thumbnail_alt }}" %}
     </a>
     {% endif %}
-    <p class="work-summary-content">
+    <p class="post-summary-content">
       {% if include.post.description %}
         {{ include.post.description | truncate: 160 }}
       {% else %}
