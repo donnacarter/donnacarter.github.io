@@ -18,9 +18,7 @@ module Jekyll
       posts_in_category = @context.registers[:site].categories[post['categories'].first]
       pos = posts_in_category.index { |p| post['path'] == p.path }
       if pos && pos < posts_in_category.length - 2
-        post = posts_in_category[pos + 2]
-        puts post
-        post
+        posts_in_category[pos + 2]
       else
         nil
       end
@@ -30,9 +28,7 @@ module Jekyll
       posts_in_category = @context.registers[:site].categories[post['categories'].first]
       pos = posts_in_category.index { |p| post['path'] == p.path }
       if pos && pos > 0
-        post = posts_in_category[pos - 1]
-        puts post
-        post
+        posts_in_category[pos - 1]
       else
         nil
       end
@@ -42,9 +38,7 @@ module Jekyll
       posts_in_category = @context.registers[:site].categories[post['categories'].first]
       pos = posts_in_category.index { |p| post['path'] == p.path }
       if pos && pos > 1
-        post = posts_in_category[pos - 2]
-        puts post
-        post
+        posts_in_category[pos - 2]
       else
         nil
       end

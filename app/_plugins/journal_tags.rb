@@ -14,7 +14,7 @@ module DonnaCarter
       pages = Pager.calculate_pages posts, per_page
       (1..pages).each do |num_page|
         pager = Pager.new(site, num_page, posts, pages, per_page, dir)
-        newpage = TagIndex.new(site, site.source, dir, tag)
+        newpage = TagIndex.new(site, site.source, dir, tag, posts.length)
         newpage.pager = pager
         newpage.dir = paginate_path(newpage, site, num_page)
         site.pages << newpage
@@ -29,7 +29,7 @@ module DonnaCarter
     end
 
     class TagIndex < Jekyll::Page
-      def initialize(site, base, dir, tag)
+      def initialize(site, base, dir, tag, posts_count)
         @site = site
         @base = base
         @dir = dir
@@ -38,6 +38,7 @@ module DonnaCarter
         self.read_yaml(File.join(base, '_layouts'), 'journal-tags.html')
         self.data['tag'] = tag
         self.data['tag_lower'] = tag.downcase
+        self.data['posts_count'] = posts_count
         # tag_title_prefix = site.config['tag_title_prefix'] || 'Posts Tagged &ldquo;'
         # tag_title_suffix = site.config['tag_title_suffix'] || '&rdquo;'
         # self.data['title'] = "#{tag_title_prefix}#{tag}#{tag_title_suffix}"
