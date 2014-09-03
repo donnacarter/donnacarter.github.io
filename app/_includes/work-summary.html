@@ -17,9 +17,9 @@
     {% endif %}
     <p class="post-summary-content">
       {% if include.post.description %}
-        {{ include.post.description | truncate: 160 }}
+        {{ include.post.description | truncate: 120 }}
       {% else %}
-        {{ include.post.content | excerpt | truncate: 160 }}
+        {{ include.post.content | excerpt | truncate: 120 }}
       {% endif %}
     </p>
   </div>

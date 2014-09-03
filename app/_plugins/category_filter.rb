@@ -6,9 +6,9 @@ module Jekyll
 
     def next_in_category(post)
       posts_in_category = @context.registers[:site].categories[post['categories'].first]
-      pos = posts_in_category.index {|post| post.equal?(self) }
+      pos = posts_in_category.index { |p| post['path'] == p.path }
       if pos && pos < posts_in_category.length - 1
-        post = posts_in_category[pos + 1]
+        posts_in_category[pos + 1]
       else
         nil
       end
@@ -16,9 +16,11 @@ module Jekyll
 
     def next_next_in_category(post)
       posts_in_category = @context.registers[:site].categories[post['categories'].first]
-      pos = posts_in_category.index {|post| post.equal?(self) }
+      pos = posts_in_category.index { |p| post['path'] == p.path }
       if pos && pos < posts_in_category.length - 2
-        posts_in_category[pos + 2]
+        post = posts_in_category[pos + 2]
+        puts post
+        post
       else
         nil
       end
@@ -26,9 +28,11 @@ module Jekyll
 
     def previous_in_category(post)
       posts_in_category = @context.registers[:site].categories[post['categories'].first]
-      pos = posts_in_category.index {|post| post.equal?(self) }
+      pos = posts_in_category.index { |p| post['path'] == p.path }
       if pos && pos > 0
-        posts_in_category[pos - 1]
+        post = posts_in_category[pos - 1]
+        puts post
+        post
       else
         nil
       end
@@ -36,9 +40,11 @@ module Jekyll
 
     def previous_previous_in_category(post)
       posts_in_category = @context.registers[:site].categories[post['categories'].first]
-      pos = posts_in_category.index {|post| post.equal?(self) }
+      pos = posts_in_category.index { |p| post['path'] == p.path }
       if pos && pos > 1
-        posts_in_category[pos - 2]
+        post = posts_in_category[pos - 2]
+        puts post
+        post
       else
         nil
       end

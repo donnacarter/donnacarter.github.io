@@ -24,28 +24,8 @@ theme: teal
 
 {% contentfor meta_twitter_card %}summary_large_image{% endcontentfor %}
 
-{% assign category = site.categories['journal'] %}
-{% for post in site.categories['journal'] %}
-  {% if post.path == page.path %}
-    {% assign previous_index = forloop.index0|minus:1 %}
-    {% assign next_index = forloop.index0|plus:1 %}
-    {% if previous_index >= 0 and next_index >= 0 category[previous_index] and category[next_index] %}
-      {% assign first_post = category[previous_index] %}
-      {% assign second_post = category[next_index] %}
-    {% elsif previous_index >= 0 category[previous_index] %}
-      {% assign second_post = category[previous_index] %}
-      {% assign previous_previous_index = forloop.index0|minus:2 %}
-      {% assign first_post = category[previous_previous_index] %}
-    {% elsif next_index >= 0 category[next_index] %}
-      {% assign next_next_index = forloop.index0|plus:2 %}
-      {% assign first_post = category[next_index] %}
-      {% assign second_post = category[next_next_index] %}
-    {% endif %}
-  {% endif %}
-{% endfor %}
-
 {% assign previous_post = page|previous_in_category %}
-{% assign next_post = page|previous_in_category %}
+{% assign next_post = page|next_in_category %}
 {% if previous_post and next_post %}
   {% assign first_post = previous_post %}
   {% assign second_post = next_post %}
