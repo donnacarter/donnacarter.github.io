@@ -4,7 +4,7 @@
     @extend .row;
   }
   .image-one, .image-two, .image-three {
-    margin-bottom: $grid-basic-padding;
+    margin: 0 $grid-basic-padding $grid-basic-padding;
     @media (min-width: $screen-sm-min) {
       @include make-xs-column(4);
       margin-bottom: 0;
