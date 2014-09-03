@@ -50,13 +50,7 @@
 
     <meta name="description" content="{{ meta_description }}">
 
-    <meta property="og:title" content="{{ title }}">
-
-    {% capture contentblock_meta_description %}{% contentblock meta_description %}{% endcapture %}
-    {% capture meta_description %}{% if contentblock_meta_description != '' %}{{ contentblock_meta_description }}{% else %}{{ page.meta_description }}{% endif %}{% endcapture %}
-    <meta name="description" content="{{ meta_description }}">
-
-    <meta property="og:title" content="{{ title }}">
+    <meta property="og:title" content="{{ meta_title }}">
 
     {% capture meta_og_type %}{% contentblock meta_og_type %}{% endcapture %}
     <meta property="og:type" content="{{ meta_og_type | default:'website' }}">
@@ -75,7 +69,7 @@
 
     {% capture meta_twitter_card %}{% contentblock meta_twitter_card %}{% endcapture %}
     <meta property="twitter:card" content="{{ meta_twitter_card | default:'summary' }}">
-    <meta property="twitter:title" content="{{ title }}">
+    <meta property="twitter:title" content="{{ meta_title }}">
     <meta property="twitter:site" content="@le_beau">
     <meta property="twitter:description" content="{{ meta_description}}">
     <meta property="twitter:image" content="{{ meta_image }}">
