@@ -1,6 +1,6 @@
 .teal-theme {
-  .journal-summary {
-    .journal-summary-title-link {
+  .post-summary {
+    .post-summary-title-link {
       color: white;
       transition: color .25s ease-in-out;
       &:hover, &:active, &:focus {
@@ -8,11 +8,11 @@
       }
     }
 
-    .journal-summary-date {
+    .post-summary-sub-title {
       color: $teal-darker;
     }
 
-    .journal-summary-content {
+    .post-summary-content {
       color: $white-hint-of-teal;
     }
   }
