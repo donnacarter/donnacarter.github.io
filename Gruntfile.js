@@ -185,11 +185,17 @@ module.exports = function (grunt) {
       options: {
         assetsDirs: [ '<%= yeoman.dist %>', '<%= yeoman.dist %>/_this-fixes-relative-assets-somehow' ],
         patterns: {
-
+          absoluteMeta: [
+            [
+              /<meta[^\>]+content=['"]https?:?\/\/[^\/"']+([^"']+)["']/gm,
+              'Update meta links to content'
+            ]
+          ]
         }
       },
       html: ['<%= yeoman.dist %>/**/*.html'],
-      css: ['<%= yeoman.dist %>/css/**/*.css']
+      css: ['<%= yeoman.dist %>/css/**/*.css'],
+      absoluteMeta: ['<%= yeoman.dist %>/**/*.html'],
     },
     htmlmin: {
       dist: {
