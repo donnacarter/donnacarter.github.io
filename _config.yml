@@ -78,11 +78,11 @@ picture:
         media: '(min-width: 992px)'
         width: 435
       source_sm:
-        media: '(min-width: 535px)'
-        width: 535
+        media: '(min-width: 500px)'
+        width: 720
       source_xs:
         media: '(min-width: 321px)'
-        width: 435
+        width: 464
       source_default:
         width: 290
 
@@ -97,8 +97,11 @@ picture:
         media: '(min-width: 992px)'
         width: 698
       source_sm:
-        media: '(min-width: 321px)'
+        media: '(min-width: 500px)'
         width: 720
+      source_xs:
+        media: '(min-width: 321px)'
+        width: 464
       source_default:
         width: 290
 
@@ -154,6 +157,12 @@ picture:
       source_sm:
         media: '(min-width: 768px)'
         width: 345
+      source_xs:
+        media: '(min-width: 480px)'
+        width: 354
+      source_xxs:
+        media: '(min-width: 321px)'
+        width: 449
       source_default:
         width: 290
 
@@ -170,6 +179,12 @@ picture:
       source_sm:
         media: '(min-width: 768px)'
         width: 345
+      source_xs:
+        media: '(min-width: 480px)'
+        width: 354
+      source_xxs:
+        media: '(min-width: 321px)'
+        width: 449
       source_default:
         width: 290
 
@@ -184,8 +199,11 @@ picture:
         media: '(min-width: 992px)'
         width: 334
       source_sm:
-        media: '(min-width: 768px)'
+        media: '(min-width: 480px)'
         width: 220
+      source_sm:
+        media: '(min-width: 321px)'
+        width: 449
       source_default:
         width: 290
 

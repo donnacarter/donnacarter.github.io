@@ -8,11 +8,20 @@
     @extend .col-md-4;
   }
 
-  @media(min-width:$screen-md-min) {
+  @media(min-width:$screen-sm-min) {
     .caption {
       margin-top: 0;
       padding-top: 0.75em;
       border-top: 1px dashed $light-grey;
+    }
+  }
+
+  &.media-caption-has-caption {
+    .media-wrapper {
+      @extend .col-sm-8;
+    }
+    .caption-wrapper {
+      @extend .col-sm-4;
     }
   }
 }

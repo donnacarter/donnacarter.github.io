@@ -1,4 +1,4 @@
-<figure class="media-caption {{ include.breakout_class }}">
+<figure class="media-caption{% if include.caption %} media-caption-has-caption{% endif %} {{ include.breakout_class }}">
   <div class="media-wrapper">
     {% capture classname %}media-image{% if include.image_border %} media-image-with-border {% endif %}{% endcapture %}
     {% picture {{ include.resize_type }} {{ include.image_src }} class="{{ classname }}" alt="{{ include.image_alt }}" %}
