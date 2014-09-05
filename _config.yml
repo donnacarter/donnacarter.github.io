@@ -227,11 +227,14 @@ picture:
       ppi: [1, 2]
       attr:
         itemprop: image
-      source_lg:
-        media: '(min-width: 1200px)'
-        width: 262
-      source_md:
-        media: '(min-width: 992px)'
-        width: 212
+      source_sm:
+        media: '(min-width: 480px)'
+        width: 353
+        height: 353
+      source_xs:
+        media: '(min-width: 321px)'
+        width: 450
+        height: 450
       source_default:
-        width: 220
+        width: 290
+        height: 290

@@ -5,21 +5,22 @@
 
   .work-square-image {
     @extend .img-responsive;
+    width: 100%;
   }
 
   @media (min-width: $screen-sm-min) {
-    width: 220px;
+    width: 345px;
     .work-square-image {
-      width: 220px;
-      height: 220px;
+      width: 345px;
+      height: 345px;
     }
   }
 
   @media (min-width: $screen-md-min) {
-    width: 212px;
+    width: 334px;
     .work-square-image {
-      width: 212px;
-      height: 212px;
+      width: 334px;
+      height: 334px;
     }
   }
 
@@ -38,7 +39,7 @@
     bottom: 0;
     color: white;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
-    padding: 8px;
+    padding: $grid-basic-padding * 1.5;
     padding-top: 20%;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
     line-height: 1;
@@ -52,10 +53,11 @@
   }
 
   .work-square-title {
-    font-size: 110%;
+    font-size: 120%;
     display: inline;
-    line-height: 1.2;
-    border-bottom: 2px solid transparent;
+    line-height: 1.5;
+    padding-bottom: 0.3em;
+    border-bottom: 3px solid transparent;
   }
 
   &:hover, &:focus, &:active {
@@ -68,28 +70,20 @@
   }
 
   .work-square-sub-title {
-    font-size: 90%;
+    font-size: 100%;
     font-family: $font-family-sans-serif;
     font-weight: normal;
-    margin-top: 3px;
+    margin-top: 0.4em;
+    margin-bottom: 0;
   }
 
-  @media (min-width: $screen-sm-min) {
-    .work-square-text {
-      padding-left: $grid-basic-padding;
-      padding-right: $grid-basic-padding;
-      padding-bottom: $grid-basic-padding;
-    }
-
+  @media(min-width: $screen-sm-min) {
     .work-square-title {
-      font-size: 120%;
-      line-height: 1.5;
-      border-bottom: 3px solid transparent;
+      font-size: 140%;
+      border-bottom-width: 4px;
     }
-
     .work-square-sub-title {
-      font-size: 100%;
-      margin-top: 5px;
+      font-size: 110%;
     }
   }
 }
