@@ -1,0 +1,1 @@
+$('.tooltip-trigger').tooltip();

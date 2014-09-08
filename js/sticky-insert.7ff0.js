@@ -1,3 +1,5 @@
+// This has had the title fading stuff amputated from it and put into title-parallax.js
+
 (function(window, $) {
   var $stickyInsert = $(".sticky-insert");
   var $stickyInsertTitle = $(".sticky-insert-title");
@@ -6,7 +8,7 @@
   var $mainHeader = $(".main-header");
   var $contents = $mainHeader.find(".contents");
 
-  if (!($mainHeader.length && $stickyInsert.length && $stickyInsertTitle)) return;
+  if (!($mainHeader.length && $stickyInsert.length && $stickyInsertTitle.length)) return;
 
   var insert = function() {
     destroy();
@@ -34,7 +36,7 @@
     $stickyInsert.empty();
   }
 
-  var fadeStart, fadeEnd, insertAppear, mainHeaderHeight, stickyInsertActive = false;
+  var insertAppear, mainHeaderHeight, stickyInsertActive = false;
 
   $(window).on("debouncedresize.sticky-insert", function() {
     mainHeaderHeight = $mainHeader.outerHeight();
@@ -44,8 +46,8 @@
 
     var titleBottom = mainHeaderHeight - (contentsTop - translateY + contentsHeight);
 
-    fadeStart = titleBottom + (titleBottom) / 2;
-    fadeEnd = mainHeaderHeight - 120;
+    var fadeStart = titleBottom + (titleBottom) / 2;
+    var fadeEnd = mainHeaderHeight - 120;
     insertAppear = fadeStart + (fadeEnd - fadeStart) / 2;
 
     if ($(window).width() >= window.dc.SCREEN_MD) {
@@ -67,20 +69,6 @@
 
   $(window).on("rafscroll.sticky-insert", function() {
     var scrollTop = $(window).scrollTop();
-    if (scrollTop <= fadeStart) {
-      if ($contents.css("opacity") != 1) {
-        $contents.css("opacity", 1);
-      }
-    } else if (scrollTop > fadeEnd) {
-      if ($contents.css("opacity") != 0) {
-        $contents.css("opacity", 0);
-      }
-    } else {
-      var max = fadeEnd - fadeStart;
-      var current = scrollTop - fadeStart;
-      $contents.css("opacity", 1 - current / max);
-    }
-
 
     if (stickyInsertActive) {
       if (scrollTop <= insertAppear) {
@@ -94,14 +82,6 @@
       }
     }
 
-    if (scrollTop > mainHeaderHeight) {
-      $contents.data('translateY', 0);
-      $contents.css("transform", "translateY(0)");
-    } else {
-      var translateY = scrollTop / -2;
-      $contents.data('translateY', translateY);
-      $contents.css("transform", "translateY(" + translateY + "px)");
-    }
   }).triggerHandler("rafscroll.sticky-insert");
 
 })(window, jQuery);
