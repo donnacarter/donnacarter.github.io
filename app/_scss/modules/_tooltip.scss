@@ -1,3 +1,6 @@
 .tooltip {
-  font-size: 100%;
+  font-size: $font-size-base;
+  .tooltip-inner {
+    padding: 0.5em 0.75em;
+  }
 }

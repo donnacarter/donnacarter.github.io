@@ -1,0 +1,9 @@
+.content-list-box {
+  @extend .row;
+  .content-list-box-col {
+    @extend .col-xs-up-6;
+    @media (min-width: $screen-lg-min) {
+      width: 41.666667%;
+    }
+  }
+}

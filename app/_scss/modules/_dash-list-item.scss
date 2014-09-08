@@ -1,12 +1,10 @@
 .dash-list-item {
   position: relative;
   &:before {
-    content: ' ';
+    content: '\25AA';
     position: absolute;
-    left: -12px;
-    border-bottom: 3px solid #eabf0a;
-    height: 50%;
-    width: 7px;
-    margin-top: 1.5px;
+    left: $grid-basic-padding * -1;
+    font-weight: bold;
+    color: #eabf0a;
   }
 }

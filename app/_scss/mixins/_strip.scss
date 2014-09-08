@@ -13,9 +13,19 @@
     @if $use-margins == 'true' {
       margin-top: $strip-vertical-padding-xs + if($under-nav == 'true', $navbar-smallscreen-height, 0);
       margin-bottom: $strip-vertical-padding-xs;
+      @if $under-nav == 'true' {
+        .no-dcscroll & {
+          margin-top: $strip-vertical-padding-xs + $navbar-smallscreen-height - $grid-basic-padding;
+        }
+      }
     } @else {
       padding-top: $strip-vertical-padding-xs + if($under-nav == 'true', $navbar-smallscreen-height, 0);
       padding-bottom: $strip-vertical-padding-xs;
+      @if $under-nav == 'true' {
+        .no-dcscroll & {
+          padding-top: $strip-vertical-padding-xs + $navbar-smallscreen-height - $grid-basic-padding;
+        }
+      }
     }
     @if $under-nav == 'true' {
       @media (min-height: $screen-short-max) {
@@ -28,9 +38,19 @@
     @if $use-margins == 'true' {
       margin-top: $strip-vertical-padding-sm + if($under-nav == 'true', $navbar-smallscreen-height, 0);
       margin-bottom: $strip-vertical-padding-sm;
+      @if $under-nav == 'true' {
+        .no-dcscroll & {
+          margin-top: $strip-vertical-padding-sm + $navbar-smallscreen-height - $grid-basic-padding;
+        }
+      }
     } @else {
       padding-top: $strip-vertical-padding-sm + if($under-nav == 'true', $navbar-smallscreen-height, 0);
       padding-bottom: $strip-vertical-padding-sm;
+      @if $under-nav == 'true' {
+        .no-dcscroll & {
+          padding-top: $strip-vertical-padding-sm + $navbar-smallscreen-height - $grid-basic-padding;
+        }
+      }
     }
     @if $under-nav == 'true' {
       @media (min-height: $screen-short-max) {
