@@ -37,7 +37,8 @@
       pinned : "headroom-pinned",
       unpinned : "headroom-unpinned",
       top : "headroom-top",
-      notTop : "headroom-not-top"
+      notTop : "headroom-not-top",
+      initial: 'headroom-pinned'
     },
     offset: navbar.offset(),
     onUnpin: function() {
@@ -56,6 +57,8 @@
       navbar.$el.trigger('pin');
     }
   });
+
+  $("body").addClass('navbar-pinned');
 
   $window.on("debouncedresize", function() {
     navbar.$el.data("headroom").offset = navbar.offset();

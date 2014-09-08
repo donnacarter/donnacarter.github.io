@@ -1,0 +1,11 @@
+.hint-of-yellow-theme {
+  .circle-icon {
+    &:focus, &:hover, &:active {
+      border-color: $darker-yellow;
+      background-color: $darker-yellow;
+      &.outline {
+        color: $darker-yellow !important;
+      }
+    }
+  }
+}

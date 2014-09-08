@@ -2,11 +2,11 @@
   <div class="wrapper">
     <div class="spacer">
       <div class="contents">
-        <h1 class="title{% unless include.no_sticky_insert %} sticky-insert-title{% endunless %}">
+        <h1 class="title parallax-title{% unless include.no_sticky_insert %} sticky-insert-title{% endunless %}">
           {{ include.title }}
         </h1>
         {% if include.sub_title %}
-          <h2 class="sub-title{% unless include.no_sticky_insert %} sticky-insert-sub-title{% endunless %}">
+          <h2 class="sub-title parallax-sub-title{% unless include.no_sticky_insert %} sticky-insert-sub-title{% endunless %}">
             {{ include.sub_title }}
           </h2>
         {% endif %}

@@ -1,0 +1,6 @@
+.col-xs-up-4 {
+  padding: 0 $grid-basic-padding;
+  @media(min-width: $screen-xs-min) {
+    @include make-xs-column(4);
+  }
+}

@@ -1,0 +1,9 @@
+.content-list {
+  margin-bottom: $grid-basic-padding;
+  @include secondary-copy;
+  @extend .list-unstyled;
+  padding-left: 2.2em;
+  .content-list-answer, .content-list-item {
+    margin-left: 12px;
+  }
+}

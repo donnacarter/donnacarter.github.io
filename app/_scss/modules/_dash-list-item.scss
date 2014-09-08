@@ -1,0 +1,12 @@
+.dash-list-item {
+  position: relative;
+  &:before {
+    content: ' ';
+    position: absolute;
+    left: -12px;
+    border-bottom: 3px solid #eabf0a;
+    height: 50%;
+    width: 7px;
+    margin-top: 1.5px;
+  }
+}

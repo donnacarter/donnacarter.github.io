@@ -1,0 +1,18 @@
+.circle-icon {
+  $list: twitter-colour $twitter-colour,
+         pinterest-colour $pinterest-colour,
+         flickr-colour $flickr-colour,
+         dribbble-colour $dribbble-colour,
+         instagram-colour $instagram-colour,
+         linkedin-colour $linkedin-colour;
+  @each $type in $list {
+    &.#{nth($type, 1)} {
+      border-color: nth($type, 2);
+      background-color: nth($type, 2);
+      &:focus, &:hover, &:active {
+        border-color: darken(nth($type, 2), 15%);
+        background-color: darken(nth($type, 2), 15%);
+      }
+    }
+  }
+}
