@@ -1,11 +1,16 @@
 .work-square-link {
   width: 100%;
+  min-height: 290px;
   position: relative;
   display: block;
 
   .work-square-image {
     @extend .img-responsive;
     width: 100%;
+  }
+
+  @media (min-width: $screen-xs-min) {
+    min-height: 210px;
   }
 
   @media (min-width: $screen-sm-min) {
@@ -26,6 +31,7 @@
 
   @media (min-width: $screen-lg-min) {
     width: 262px;
+    min-height: 262px;
     .work-square-image {
       width: 262px;
       height: 262px;
