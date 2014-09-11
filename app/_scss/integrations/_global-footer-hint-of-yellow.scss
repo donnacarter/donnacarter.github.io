@@ -5,9 +5,10 @@
       &:focus, &:hover, &:active {
         color: $brighter-yellow;
       }
+      -webkit-tap-highlight-color: rgba($brighter-yellow, $tap-highlight-opacity);
     }
     .circle-icon {
-      &:focus, &:hover, &:active {
+      &:focus, &:hover, &:active, &.touched {
         border-color: $brighter-yellow;
         background-color: $brighter-yellow;
         &.outline {

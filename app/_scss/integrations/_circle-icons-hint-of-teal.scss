@@ -1,6 +1,6 @@
 .hint-of-teal-theme {
   .circle-icon {
-    &:focus, &:hover, &:active {
+    &:focus, &:hover, &:active, &.touched {
       border-color: $teal-bright;
       background-color: $teal-bright;
       &.outline {

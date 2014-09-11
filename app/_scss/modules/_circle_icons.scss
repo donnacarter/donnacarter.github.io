@@ -8,7 +8,8 @@
   text-align: center;
   color: white !important;
   transition: all .25s ease-in-out;
-  &:focus, &:hover, &:active {
+  -webkit-tap-highlight-color: rgba(white, 0) !important;
+  &:focus, &:hover, &:active, &.touched {
     background-color: $main-purple;
     border-color: $main-purple;
     &.outline {

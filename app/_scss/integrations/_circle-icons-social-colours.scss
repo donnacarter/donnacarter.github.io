@@ -9,7 +9,7 @@
     &.#{nth($type, 1)} {
       border-color: nth($type, 2);
       background-color: nth($type, 2);
-      &:focus, &:hover, &:active {
+      &:focus, &:hover, &:active, &.touched {
         border-color: darken(nth($type, 2), 15%);
         background-color: darken(nth($type, 2), 15%);
       }

@@ -42,7 +42,8 @@
     height: 40px;
     opacity: 0.9;
     transition: all .25s ease-in-out;
-    &:hover, &:active, &:focus {
+    -webkit-tap-highlight-color: rgba(white, 0);
+    &:hover, &:active, &:focus, &.touched {
       opacity: 1;
     }
   }
@@ -83,18 +84,19 @@
         cursor: default;
       }
 
+      -webkit-tap-highlight-color: rgba(white, 0);
       &.me {
-        &:hover, &:focus, &:active, &.active {
+        &:hover, &:focus, &:active, &.active, &.touched {
           border-color: $yellow;
         }
       }
       &.work {
-        &:hover, &:focus, &:active, &.active {
+        &:hover, &:focus, &:active, &.active, &.touched {
           border-color: $salmon;
         }
       }
       &.journal {
-        &:hover, &:focus, &:active, &.active {
+        &:hover, &:focus, &:active, &.active, &.touched {
           border-color: $teal;
         }
       }

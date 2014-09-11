@@ -8,7 +8,7 @@
       &.outline {
         color: white !important;
       }
-      &:focus, &:hover, &:active {
+      &:focus, &:hover, &:active, &.touched {
         border-color: $teal-light-green;
         background-color: $teal-light-green;
         &.outline {

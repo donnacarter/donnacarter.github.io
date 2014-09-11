@@ -1,6 +1,6 @@
 .hint-of-yellow-theme {
   .circle-icon {
-    &:focus, &:hover, &:active {
+    &:focus, &:hover, &:active, &.touched {
       border-color: $darker-yellow;
       background-color: $darker-yellow;
       &.outline {
