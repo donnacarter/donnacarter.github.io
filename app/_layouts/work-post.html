@@ -43,14 +43,19 @@ theme: salmon
 <section class="post-meta sticky-insert-transplant" data-append=".work-post .right-col">
   <ul class="post-share share-list">
     <li class="share-item">
-     <a href="https://www.facebook.com/dialog/share?app_id=684345261634217&amp;display=page&amp;href={{ absolute_url | cgi_escape }}&amp;redirect_uri={{ absolute_url | cgi_escape }}"
-        class="share-link circle-icon outline fb-share"
-        data-fb-href="{{ absolute_url }}">
+      <a href="https://www.facebook.com/dialog/share?app_id=684345261634217&amp;display=page&amp;href={{ absolute_url | cgi_escape }}&amp;redirect_uri={{ absolute_url | cgi_escape }}"
+        class="share-link circle-icon outline fb-share tooltip-trigger"
+        data-fb-href="{{ absolute_url }}"
+        data-toggle="tooltip"
+        title="Share on Facebook">
         <i class="fa fa-facebook"></i>
       </a>
     </li>
     <li class="share-item">
-      <a href="https://twitter.com/intent/tweet?via=le_beau&amp;url={{ absolute_url | cgi_escape }}&amp;text={{ page.title | cgi_escape }}" class="share-link circle-icon outline">
+      <a href="https://twitter.com/intent/tweet?via=le_beau&amp;url={{ absolute_url | cgi_escape }}&amp;text={{ page.title | cgi_escape }}"
+         class="share-link circle-icon outline tooltip-trigger"
+         data-toggle="tooltip"
+         title="Share on Twitter">
         <i class="fa fa-twitter"></i>
       </a>
     </li>

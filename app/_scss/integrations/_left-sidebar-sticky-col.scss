@@ -4,13 +4,4 @@
       @extend .col-md-offset-3;
     }
   }
-  @media(min-width: $screen-md-min) {
-    .side-title {
-      margin-bottom: 0;
-    }
-    .side-sub-title {
-      margin-top: $grid-basic-padding;
-      margin-bottom: 0;
-    }
-  }
 }
