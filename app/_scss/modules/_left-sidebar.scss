@@ -2,7 +2,6 @@
   @extend .row;
   position: relative;
   .left-col {
-    margin-bottom: $grid-basic-padding * 3;
     @extend .col-md-3;
     &.teleport-over {
       @extend .col-md-pull-9;
@@ -56,6 +55,9 @@
     .right-col {
       @extend .col-md-8;
     }
+  }
+  @media(min-width: $screen-md-min) {
+    margin-bottom: $grid-basic-padding * 3;
   }
 }
 
