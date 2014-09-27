@@ -3,7 +3,7 @@
     .stick {
       @media(min-width: $screen-md-min) {
         position: sticky;
-        top: $grid-basic-padding;
+        top: $grid-basic-padding + $navbar-pinned-height;
         transition: top .25s linear;
       }
     }
@@ -25,7 +25,7 @@
         }
       }
       .fake-sticky {
-        top: $grid-basic-padding;
+        top: $grid-basic-padding + $navbar-pinned-height;
         position: fixed;
         right: auto;
       }

@@ -29,6 +29,7 @@
       var parentHeight = $parent.height();
       var maxScrollTop = $(document).height() - $window.height();
       var scrollTop = Math.min($window.scrollTop(), maxScrollTop);
+      var navbarHeight = window.globalNavbar.pinned ? window.globalNavbar.navbarHeight : 0;
       if (scrollTop <= parentOffset.top - winTop) {
         if (!$el.hasClass("fake-sticky-top")) {
           $el.addClass("fake-sticky-top").removeClass("fake-sticky fake-sticky-bottom");

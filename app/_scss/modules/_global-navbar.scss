@@ -20,10 +20,11 @@
   }
 
   &.headroom-pinned {
-    transform: translateY(0%);
+    transform: translateY(0);
   }
+
   &.headroom-unpinned {
-    transform: translateY(-100%);
+    transform: translateY($navbar-smallscreen-height * -1 + $navbar-pinned-height);
   }
 
   .dcscroll &.top-of-screen {
@@ -86,16 +87,19 @@
 
       -webkit-tap-highlight-color: rgba(white, 0);
       &.me {
-        &:hover, &:focus, &:active, &.active, &.touched {
+        -webkit-tap-highlight-color: rgba($yellow, 0.5);
+        &:hover, &:focus, &:active, &.active {
           border-color: $yellow;
         }
       }
       &.work {
-        &:hover, &:focus, &:active, &.active, &.touched {
+        -webkit-tap-highlight-color: rgba($salmon, 0.5);
+        &:hover, &:focus, &:active, &.active {
           border-color: $salmon;
         }
       }
       &.journal {
+        -webkit-tap-highlight-color: rgba($teal, 0.5);
         &:hover, &:focus, &:active, &.active, &.touched {
           border-color: $teal;
         }
@@ -103,7 +107,7 @@
     }
   }
 
-  transition: height .25s ease-in-out, background-color .25s ease-in-out;
+  transition: transform .25s ease-in-out, height .25s ease-in-out, background-color .25s ease-in-out;
 
   @media(min-width: $screen-xs-min) and (min-height: $screen-short-max) {
     .global-nav {
@@ -112,25 +116,38 @@
         padding-right: $navbar-padding-horizontal/2;
         margin: 0 $navbar-padding-horizontal/2;
       }
+      li {
+        transform: translateY(30px);
+      }
+    }
+
+    min-height: $navbar-height;
+    transform: translateY(-30px);
+
+    &.headroom-pinned {
+      transform: translateY(-30px);
+    }
+
+    &.headroom-unpinned {
+      transform: translateY($navbar-height * -1 + $navbar-pinned-height);
+    }
+
+    .brand {
+      width: 60px;
+      height: 60px;
+      transform: scale(0.6667, 0.6667) translate(-15px, 30px);
     }
 
     .dcscroll &.top-of-screen {
-      min-height: $navbar-height;
+      transform: translateY(0);
       background-color: $main-purple;
       .brand {
-        margin-top: 15px;
-        width: 60px;
-        height: 60px;
+        transform: translateY(5px);
       }
 
       .global-nav {
-        .item {
-          padding-top: $navbar-padding-vertical/4;
-          padding-bottom: $navbar-padding-vertical/4;
-        }
-
         li {
-          height: $navbar-height;
+          transform: translateY(15px);
         }
       }
     }

@@ -75,7 +75,7 @@
     <meta property="twitter:image" content="{{ meta_image }}">
 
   </head>
-  <body class="{% if page.has_header %}has-header{% endif %} {% if page.theme %}hint-of-{{page.theme}}-theme{% endif %}">
+  <body class="{% if page.theme %}hint-of-{{page.theme}}-theme{% endif %}">
     <!--[if lt IE 10]>
     <div class="browsehappy">
       <p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -149,8 +149,8 @@
     <script src="/js/fix-header-height.js"></script>
     <script src="/js/sticky-insert.js"></script>
     <script src="/js/sticky-col.js"></script>
-    <script src="/js/title-parallax.js"></script>
     <script src="/js/texture-parallax.js"></script>
+    <script src="/js/title-fade.js"></script>
     <script src="/js/touch-handler.js"></script>
     <!-- endbuild -->
     {% contentblock footer_scripts %}
