@@ -1,158 +1,76 @@
-<!DOCTYPE html>
-<html class="no-js">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% capture contentblock_meta_title %}{% contentblock meta_title %}{% endcapture %}
-    {% capture meta_title %}{% if contentblock_meta_title != '' %}{{ contentblock_meta_title }}{% elsif page.meta_title %}{{ page.meta_title }}{% else %}{{ page.title }}{% endif %}{% endcapture %}
-    <title>{{ meta_title }}</title>
+---
+layout: base
+---
+<nav role="navigation" class="global-navbar top-of-screen">
+  <div class="container">
+    <a href="/" class="brand">
+      <img src="/images/dc-logo.svg" class="img-responsive">
+    </a>
+    <ul class="global-nav">
+      <li>
+        <a href="/me/" class="item me{% if page.active_section == 'me' %} active{% endif %}{% if page.current_section == 'me' %} current{% endif %}">Me</a>
+      </li>
+      <li>
+        <a href="/work/" class="item work{% if page.active_section == 'work' %} active{% endif %}{% if page.current_section == 'work' %} current{% endif %}">Work</a>
+      </li>
+      <li>
+        <a href="/journal/" class="item journal{% if page.active_section == 'journal' %} active{% endif %}{% if page.current_section == 'journal' %} current{% endif %}">Journal</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-    <script>
-(function() {
-    WebFontConfig = {
-      google: { families: [ 'Bitter:400,700,400italic:latin', 'Lato:400,700,400italic,700italic:latin' ] }
-    };
-    var wf = document.createElement('script');
-    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-    wf.type = 'text/javascript';
-    wf.async = 'true';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(wf, s);
-    // if after 500ms we haven't got anything show the user something, a FOUT is better than nothing
-    setTimeout(function() {
-      // you can have the webfont.js cached but still have no classes fire and you will have a window.WebFontConfig object
-      if ( ! ("WebFont" in window)) {
-        // non wfl loader class name because their events could still fire
-        document.getElementsByTagName("html")[0].className += " wf-fail";
-      }
-    }, 500);
-})();
-    </script>
-    <!-- build:css(.tmp) /css/main.css -->
-    <link rel="stylesheet" href="/css/main.css">
-    <!-- endbuild -->
+{% contentblock header %}
 
-    <!-- build:js /js/pre-render.js -->
-    <script src="/bower-components/modernizr/modernizr.js"></script>
-    <script src="/bower-components/modernizr/feature-detects/css-positionsticky.js"></script>
-    <script src="/js/modernizr-dc-scroll.js"></script>
-    <script src="/bower-components/picturefill/dist/picturefill.js"></script>
-    <!-- endbuild -->
+<div class="post-header-wrapper">
+  <main>
 
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/images/icons/dc-logo-purple-152.png">
-    <link rel="shortcut icon" sizes="192x192" href="/images/icons/dc-logo-purple-192.png">
+    {{ content }}
 
-    {% capture contentblock_meta_description %}{% contentblock meta_description %}{% endcapture %}
-    {% capture meta_description %}{% if contentblock_meta_description != '' %}{{ contentblock_meta_description }}{% else %}{{ page.meta_description }}{% endif %}{% endcapture %}
-
-    <meta name="description" content="{{ meta_description }}">
-
-    <meta property="og:title" content="{{ meta_title }}">
-
-    {% capture meta_og_type %}{% contentblock meta_og_type %}{% endcapture %}
-    <meta property="og:type" content="{{ meta_og_type | default:'website' }}">
-    {% if meta_og_type == 'article' %}
-      <meta property="og:article:author" content="https://www.facebook.com/donna.carter.14289">
-      {% contentblock meta_og_article_tags %}
-    {% endif %}
-    <meta property="og:description" content="{{ meta_description }}">
-    <meta property="og:locale" content="en_GB">
-    <meta property="og:site_name" content="Donna Carter">
-    <meta property="og:url" content="{% contentblock canonical_url %}">
-    {% capture contentblock_meta_image %}{% contentblock meta_image %}{% endcapture %}
-    {% capture meta_image %}{% if contentblock_meta_image != '' %}{{ contentblock_meta_image }}{% else %}{{ site.protocol }}://{{ site.host }}/images/icons/dc-logo-purple-1200.png{% endif %}{% endcapture %}
-    <meta property="og:image" content="{{ meta_image }}">
-    <meta property="fb:profile_id" content="908020524">
-
-    {% capture meta_twitter_card %}{% contentblock meta_twitter_card %}{% endcapture %}
-    <meta property="twitter:card" content="{{ meta_twitter_card | default:'summary' }}">
-    <meta property="twitter:title" content="{{ meta_title }}">
-    <meta property="twitter:site" content="@le_beau">
-    <meta property="twitter:description" content="{{ meta_description}}">
-    <meta property="twitter:image" content="{{ meta_image }}">
-
-  </head>
-  <body class="{% if page.theme %}hint-of-{{page.theme}}-theme{% endif %}">
-    <!--[if lt IE 10]>
-    <div class="browsehappy">
-      <p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    </div>
-    <![endif]-->
-    <nav role="navigation" class="global-navbar top-of-screen">
-      <div class="container">
-        <a href="/" class="brand">
-          <img src="/images/dc-logo.svg" class="img-responsive">
-        </a>
-        <ul class="global-nav">
-          <li>
-            <a href="/me/" class="item me{% if page.active_section == 'me' %} active{% endif %}{% if page.current_section == 'me' %} current{% endif %}">Me</a>
-          </li>
-          <li>
-            <a href="/work/" class="item work{% if page.active_section == 'work' %} active{% endif %}{% if page.current_section == 'work' %} current{% endif %}">Work</a>
-          </li>
-          <li>
-            <a href="/journal/" class="item journal{% if page.active_section == 'journal' %} active{% endif %}{% if page.current_section == 'journal' %} current{% endif %}">Journal</a>
-          </li>
-        </ul>
+  </main>
+  <footer class="global-footer">
+    <div class="container">
+      <div class="global-footer-copyright">
+        &copy; 2014
+        <a href="/">Donna Carter</a>
       </div>
-    </nav>
-
-    {% contentblock header %}
-
-    <div class="post-header-wrapper">
-      <main>
-
-        {{ content }}
-
-      </main>
-      <footer class="global-footer">
-        <div class="container">
-          <div class="global-footer-copyright">
-            &copy; 2014
-            <a href="/">Donna Carter</a>
-          </div>
-          <nav class="global-footer-nav">
-            <li>
-              <a href="https://uk.linkedin.com/in/donnamcarter" target="_blank" class="circle-icon outline">
-                <i class="fa fa-linkedin"></i>
-              </a>
-            </li>
-            <li>
-              <a href="https://twitter.com/le_beau" class="circle-icon outline" target="_blank">
-                <i class="fa fa-twitter"></i>
-              </a>
-            </li>
-            <li>
-              <a href="mailto:me@donnacarter.co.uk?subject=Hi%20Donna" class="circle-icon outline">
-                <i class="fa fa-envelope"></i>
-              </a>
-            </li>
-          </nav>
-        </div>
-      </footer>
+      <nav class="global-footer-nav">
+        <li>
+          <a href="https://uk.linkedin.com/in/donnamcarter" target="_blank" class="circle-icon outline">
+            <i class="fa fa-linkedin"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/le_beau" class="circle-icon outline" target="_blank">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:me@donnacarter.co.uk?subject=Hi%20Donna" class="circle-icon outline">
+            <i class="fa fa-envelope"></i>
+          </a>
+        </li>
+      </nav>
     </div>
-    <div id="fb-root"></div>
+  </footer>
+</div>
+<div id="fb-root"></div>
 
-    <!-- build:js /js/main.js -->
-    <script src="/bower-components/jquery/dist/jquery.js"></script>
-    <script src="/bower-components/headroom.js/dist/headroom.js"></script>
-    <script src="/bower-components/headroom.js/dist/jQuery.headroom.js"></script>
-    <script src="/bower-components/jquery.debouncedresize/js/jquery.debouncedresize.js"></script>
-    <script src="/bower-components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
-    <script src="/js/constants.js"></script>
-    <script src="/js/tooltips.js"></script>
-    <script src="/js/raf-scroll.js"></script>
-    <script src="/js/global-navbar.js"></script>
-    <script src="/js/fix-header-height.js"></script>
-    <script src="/js/sticky-insert.js"></script>
-    <script src="/js/sticky-col.js"></script>
-    <script src="/js/texture-parallax.js"></script>
-    <script src="/js/title-fade.js"></script>
-    <script src="/js/touch-handler.js"></script>
-    <!-- endbuild -->
-    {% contentblock footer_scripts %}
-  </body>
-</html>
+<!-- build:js /js/main.js -->
+<script src="/bower-components/jquery/dist/jquery.js"></script>
+<script src="/bower-components/headroom.js/dist/headroom.js"></script>
+<script src="/bower-components/headroom.js/dist/jQuery.headroom.js"></script>
+<script src="/bower-components/jquery.debouncedresize/js/jquery.debouncedresize.js"></script>
+<script src="/bower-components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
+<script src="/js/constants.js"></script>
+<script src="/js/tooltips.js"></script>
+<script src="/js/raf-scroll.js"></script>
+<script src="/js/global-navbar.js"></script>
+<script src="/js/fix-header-height.js"></script>
+<script src="/js/sticky-insert.js"></script>
+<script src="/js/sticky-col.js"></script>
+<script src="/js/texture-parallax.js"></script>
+<script src="/js/title-fade.js"></script>
+<script src="/js/touch-handler.js"></script>
+<!-- endbuild -->
+{% contentblock footer_scripts %}

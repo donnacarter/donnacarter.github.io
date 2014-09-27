@@ -202,8 +202,8 @@ module Jekyll
         if dir_match.length > 0
           instances[key][:generated_src] = Pathname.new(File.join(baseurl, image_dest, image_dir, File.basename(dir_match[0]))).cleanpath
         else
-          cached_images[instance[:src]][:image] = MiniMagick::Image.open(file_path) unless cached_images[instance[:src]][:image]
-          actual_file = generate_image(cached_images[instance[:src]][:image], instance[:width], instance[:height], dest_dir, basename, digest, ext)
+          # cached_images[instance[:src]][:image] = MiniMagick::Image.open(file_path) unless cached_images[instance[:src]][:image]
+          actual_file = generate_image(MiniMagick::Image.open(file_path), instance[:width], instance[:height], dest_dir, basename, digest, ext)
           instances[key][:generated_src] = Pathname.new(File.join(baseurl, image_dest, image_dir, File.basename(actual_file))).cleanpath
         end
 
@@ -211,6 +211,7 @@ module Jekyll
     end
 
     def generate_image(image, desired_width, desired_height, destination, basename, digest, ext)
+
       orig_width = image[:width].to_f
       orig_height = image[:height].to_f
       orig_ratio = orig_width/orig_height

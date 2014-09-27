@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% capture contentblock_meta_title %}{% contentblock meta_title %}{% endcapture %}
+    {% capture meta_title %}{% if contentblock_meta_title != '' %}{{ contentblock_meta_title }}{% elsif page.meta_title %}{{ page.meta_title }}{% else %}{{ page.title }}{% endif %}{% endcapture %}
+    <title>{{ meta_title }}</title>
+
+    <script>
+(function() {
+    WebFontConfig = {
+      google: { families: [ 'Bitter:400,700,400italic:latin', 'Lato:400,700,400italic,700italic:latin' ] }
+    };
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+    // if after 500ms we haven't got anything show the user something, a FOUT is better than nothing
+    setTimeout(function() {
+      // you can have the webfont.js cached but still have no classes fire and you will have a window.WebFontConfig object
+      if ( ! ("WebFont" in window)) {
+        // non wfl loader class name because their events could still fire
+        document.getElementsByTagName("html")[0].className += " wf-fail";
+      }
+    }, 500);
+})();
+    </script>
+    <!-- build:css(.tmp) /css/main.css -->
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- endbuild -->
+
+    <!-- build:js /js/pre-render.js -->
+    <script src="/bower-components/modernizr/modernizr.js"></script>
+    <script src="/bower-components/modernizr/feature-detects/css-positionsticky.js"></script>
+    <script src="/js/modernizr-dc-scroll.js"></script>
+    <script src="/bower-components/picturefill/dist/picturefill.js"></script>
+    <!-- endbuild -->
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/images/icons/dc-no-circle-180x180.png">
+    <link rel="shortcut icon" sizes="192x192" href="/images/icons/dc-no-circle-192x192.png">
+
+    {% capture contentblock_meta_description %}{% contentblock meta_description %}{% endcapture %}
+    {% capture meta_description %}{% if contentblock_meta_description != '' %}{{ contentblock_meta_description }}{% else %}{{ page.meta_description }}{% endif %}{% endcapture %}
+
+    <meta name="description" content="{{ meta_description }}">
+
+    <meta property="og:title" content="{{ meta_title }}">
+
+    {% capture meta_og_type %}{% contentblock meta_og_type %}{% endcapture %}
+    <meta property="og:type" content="{{ meta_og_type | default:'website' }}">
+    {% if meta_og_type == 'article' %}
+      <meta property="og:article:author" content="https://www.facebook.com/donna.carter.14289">
+      {% contentblock meta_og_article_tags %}
+    {% endif %}
+    <meta property="og:description" content="{{ meta_description }}">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:site_name" content="Donna Carter">
+    <meta property="og:url" content="{% contentblock canonical_url %}">
+    {% capture contentblock_meta_image %}{% contentblock meta_image %}{% endcapture %}
+    {% capture meta_image %}{% if contentblock_meta_image != '' %}{{ contentblock_meta_image }}{% else %}{{ site.protocol }}://{{ site.host }}/images/icons/dc-logo-purple-1200.png{% endif %}{% endcapture %}
+    <meta property="og:image" content="{{ meta_image }}">
+    <meta property="fb:profile_id" content="908020524">
+
+    {% capture meta_twitter_card %}{% contentblock meta_twitter_card %}{% endcapture %}
+    <meta property="twitter:card" content="{{ meta_twitter_card | default:'summary' }}">
+    <meta property="twitter:title" content="{{ meta_title }}">
+    <meta property="twitter:site" content="@le_beau">
+    <meta property="twitter:description" content="{{ meta_description}}">
+    <meta property="twitter:image" content="{{ meta_image }}">
+
+  </head>
+  <body class="{% if page.theme %}hint-of-{{page.theme}}-theme{% endif %}">
+    <!--[if lt IE 10]>
+    <div class="browsehappy">
+      <p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    </div>
+    <![endif]-->
+    {{ content }}
+  </body>
+</html>
