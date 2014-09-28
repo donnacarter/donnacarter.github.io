@@ -1,0 +1,7 @@
+@mixin wf-fade ($delay: 0) {
+  opacity: 0;
+  .wf-active &, .wf-inactive &, .wf-fail & {
+    opacity: 1;
+  }
+  transition: opacity .25s ease-in-out $delay;
+}

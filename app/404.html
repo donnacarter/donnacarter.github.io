@@ -2,4 +2,14 @@
 layout: base
 title: 404 - File Not Found
 ---
-
+<div class="error-page">
+  <img src="/images/puppy.svg" alt="Sad Puppy" class="error-image">
+  <h1 class="error-title">Oh no!</h1>
+  <h2 class="error-sub-title">There doesn't seem to be a page here</h2>
+  <p class="error-description">
+    Sorry about that.
+    If something should be here please <a href="mailto:me@donnacarter.co.uk?subject=Yo%20Donna%2C%20what%27s%20with%20the%20error%3F">let me know</a> otherwise head back to <a href="/">my site</a>.</p>
+  <a href="/" title="Donna Carter" class="error-home-link">
+    {% picture error_logo icons/dc-logo-purple.png class="error-home-logo" alt="Donna Carter" %}
+  </a>
+</div>

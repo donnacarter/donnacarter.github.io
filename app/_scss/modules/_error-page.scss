@@ -1,0 +1,40 @@
+.error-page {
+  @include strip('true', 'false');
+  max-width: 600px;
+
+  text-align: center;
+
+  .error-image {
+    width: 80%;
+  }
+
+  .error-title, .error-sub-title {
+    @include wf-fade;
+  }
+
+  .error-description {
+    @include main-copy;
+  }
+
+  .error-home-link {
+    display: block;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    opacity: 0.9;
+    transition: opacity .25s ease-in-out;
+    &:focus, &:hover, &:active, &.touched {
+      opacity: 1;
+    }
+  }
+
+  .error-home-logo {
+    @extend .img-responsive;
+  }
+
+  @media (min-width: $screen-xs-min) {
+    .error-image {
+      width: 40%;
+    }
+  }
+}
