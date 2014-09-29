@@ -238,11 +238,3 @@ picture:
       source_default:
         width: 290
         height: 290
-
-    error_logo:
-      ppi: [1, 2]
-      attr:
-        itemprop: image
-      source_default:
-        width: 50
-        height: 50
