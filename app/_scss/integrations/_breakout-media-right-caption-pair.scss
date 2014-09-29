@@ -6,6 +6,10 @@
   }
   .media-group {
     @extend .row;
+    margin-bottom: $grid-basic-padding * -1;
+    @media (min-width: $screen-xs-min) {
+      margin-bottom: 0;
+    }
   }
   .image-one, .image-two {
     margin: 0 $grid-basic-padding $grid-basic-padding;
@@ -24,6 +28,7 @@
       margin-top: 0;
       padding-top: 0.75em;
       border-top: 1px dashed $light-grey;
+      border-bottom: 0;
     }
   }
 
