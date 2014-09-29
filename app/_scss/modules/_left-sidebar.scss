@@ -24,7 +24,7 @@
     margin-top: 0;
     font-size: 215%;
     margin-bottom: $grid-basic-padding;
-    @extend .font-fade;
+    @include wf-fade;
   }
 
   .side-sub-title {
@@ -34,7 +34,7 @@
     color: $light-medium-grey;
     margin-bottom: $grid-basic-padding;
     font-weight: normal;
-    @extend .font-fade;
+    @include wf-fade;
   }
 
   .side-paragraph {

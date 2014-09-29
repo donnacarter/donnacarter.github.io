@@ -30,21 +30,13 @@
     }
     .name {
       font-weight: bold;
-      opacity: 0;
-      .wf-active &, .wf-inactive &, .wf-fail & {
-        opacity: 1;
-      }
-      transition: opacity .5s ease-in-out .75s;
+      @include wf-fade(.75s);
     }
     margin-bottom: 0.6em;
   }
 
   .intro-hero-sub-title {
-    opacity: 0;
-    .wf-active &, .wf-inactive &, .wf-fail & {
-      opacity: 1;
-    }
-    transition: opacity .25s ease-in-out 1.25s;
+    @include wf-fade(1.25s);
     font-family: $font-family-serif;
     font-weight: normal;
     margin: 1.3em 0;
@@ -65,10 +57,7 @@
   .intro-hero-copy {
     margin: 1em 0;
     opacity: 0;
-    .wf-active &, .wf-inactive &, .wf-fail & {
-      opacity: 1;
-    }
-    transition: opacity .25s ease-in-out 1.25s;
+    @include wf-fade(1.5s);
   }
 
   .intro-hero-social {

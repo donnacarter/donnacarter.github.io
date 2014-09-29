@@ -49,13 +49,13 @@
     padding-top: 20%;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
     line-height: 1;
+
   }
 
-  .work-square-title, .work-square-subtitle {
+  .work-square-title, .work-square-sub-title {
     margin: 0;
-    opacity: 0.9;
-    transition: opacity .25s ease-in-out;
     @include border-transition;
+    @include wf-fade(0, 0.9);
   }
 
   .work-square-title {
@@ -67,7 +67,7 @@
   }
 
   &:hover, &:focus, &:active {
-    .work-square-title, .work-square-subtitle {
+    .work-square-title, .work-square-sub-title {
       opacity: 1;
     }
     .work-square-title {

@@ -15,6 +15,7 @@
     margin: 0 0 0.5em;
     @include border-transition;
     font-size: 133.33%;
+    @include wf-fade;
   }
 
   .post-summary-title-link {
