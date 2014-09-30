@@ -10,7 +10,6 @@
     $el: $(".global-navbar").first(),
     $over: $(".navbar-over").first(),
     pinned: true,
-    defaultOffset: 180,
     navbarHeight: 60,
     offset: function() {
       return this.navbarHeight * 2;
@@ -61,7 +60,7 @@
 
   $window.on("rafscroll", function(e) {
     var scrollTop = $window.scrollTop();
-    if (scrollTop >= 45 && navbar.$el.hasClass("top-of-screen")) {
+    if (scrollTop >= 120 && navbar.$el.hasClass("top-of-screen")) {
       navbar.$el.removeClass("top-of-screen");
     } else if (scrollTop <= 0 && !navbar.$el.hasClass("top-of-screen")) {
       navbar.$el.addClass("top-of-screen");
