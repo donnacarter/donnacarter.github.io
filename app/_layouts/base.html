@@ -48,7 +48,13 @@
     {% capture contentblock_meta_description %}{% contentblock meta_description %}{% endcapture %}
     {% capture meta_description %}{% if contentblock_meta_description != '' %}{{ contentblock_meta_description }}{% else %}{{ page.meta_description }}{% endif %}{% endcapture %}
 
+    {% capture contentblock_canonical_url %}{% contentblock canonical_url %}{% endcapture %}
+    {% capture canonical_url %}{% if contentblock_canonical_url != '' %}{{ contentblock_canonical_url }}{% else %}{% if page.canonical_url %}{{ site.protocol }}://{{ site.host }}{{ page.canonical_url }}{% endif %}{% endif %}{% endcapture %}
     <link rel="author" href="humans.txt">
+
+    {% unless skip_canonical_tag %}
+    <link rel="canonical" href="{{ canonical_url }}">
+    {% endunless %}
 
     <meta name="description" content="{{ meta_description }}">
 
@@ -63,7 +69,10 @@
     <meta property="og:description" content="{{ meta_description }}">
     <meta property="og:locale" content="en_GB">
     <meta property="og:site_name" content="Donna Carter">
-    <meta property="og:url" content="{% contentblock canonical_url %}">
+
+    {% if canonical_url %}
+      <meta property="og:url" content="{{ canonical_url }}">
+    {% endif %}
     {% capture contentblock_meta_image %}{% contentblock meta_image %}{% endcapture %}
     {% capture meta_image %}{% if contentblock_meta_image != '' %}{{ contentblock_meta_image }}{% else %}{{ site.protocol }}://{{ site.host }}/images/icons/dc-no-circle-1000x1000.png{% endif %}{% endcapture %}
     <meta property="og:image" content="{{ meta_image }}">

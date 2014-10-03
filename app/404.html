@@ -1,7 +1,11 @@
 ---
 layout: base
 title: 404 - File Not Found
+meta_description: Sorry - No page here
+canonical_url: /
+skip_canonical_tag: true
 ---
+{% capture absolute_url %}{{ site.protocol }}://{{ site.host }}/{% endcapture %}
 <div class="error-page">
   <img src="/images/puppy.svg" alt="Sad Puppy" class="error-image">
   <h1 class="error-title">Oh no!</h1>
