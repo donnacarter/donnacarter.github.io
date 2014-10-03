@@ -1,0 +1,17 @@
+/* TEAM */
+Donna Carter
+http://donnacarter.co.uk
+@le_beau
+London, UK
+
+Kevin Dew
+http://kevindew.me
+@el_kev
+London, UK
+
+/* THANKS */
+Jim Ramsden, Gavyn McKenzie, Billy Burgoyne
+
+/* SITE */
+Built with: jekyll, SASS, grunt, bower, bootstrap, jQuery, headroom.js, modernizr, picturefill
+Source: https://github.com/donnacarter/donnacarter.github.io

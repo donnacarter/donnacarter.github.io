@@ -48,6 +48,8 @@
     {% capture contentblock_meta_description %}{% contentblock meta_description %}{% endcapture %}
     {% capture meta_description %}{% if contentblock_meta_description != '' %}{{ contentblock_meta_description }}{% else %}{{ page.meta_description }}{% endif %}{% endcapture %}
 
+    <link rel="author" href="humans.txt">
+
     <meta name="description" content="{{ meta_description }}">
 
     <meta property="og:title" content="{{ meta_title }}">
