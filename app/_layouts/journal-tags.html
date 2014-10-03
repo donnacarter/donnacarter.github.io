@@ -6,6 +6,7 @@ theme: teal
 ---
 {% contentfor meta_title %}#{{ page.tag | slug }}{% endcontentfor %}
 {% contentfor sub_title %}#{{ page.tag | slug }}{% endcontentfor %}
+{% contentfor meta_description %}Posts from Donna Carters journal tagged {{ page.tag }}{% endcontentfor %}
 
 {% comment %}<p>{{ page.posts_count }} post{% unless page.posts_count == 1 %}s{% endunless %} tagged #{{ page.tag | slug }}.</p>{% endcomment %}
 <ul class="journal-list{% if paginator.pages.total_pages > 1 %} with-pager{% endif %}">
