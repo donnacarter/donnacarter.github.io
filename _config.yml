@@ -8,6 +8,7 @@ description: Donna Carter
 author:
   name: Donna Carter
   email: me@donnacarter.co.uk
+auto: false
 
 protocol: http
 host: 0.0.0.0:9000
