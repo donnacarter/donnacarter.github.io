@@ -8,9 +8,9 @@ a {
   &:focus, &:hover, &:active {
     text-decoration: none;
     color: $main-purple;
+    outline: 0;
   }
   -webkit-tap-highlight-color: rgba($main-purple, $tap-highlight-opacity);
-  outline: 0;
 }
 
 h1 {
