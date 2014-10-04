@@ -55,7 +55,7 @@
   .work-square-title, .work-square-sub-title {
     margin: 0;
     @include border-transition;
-    @include wf-fade(0, 0.9);
+    @include wf-fade(0.9);
   }
 
   .work-square-title {

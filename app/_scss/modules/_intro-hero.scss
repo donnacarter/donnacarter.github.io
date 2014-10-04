@@ -20,23 +20,22 @@
     }
     .intro {
       font-weight: normal;
-      transform: translateX(-200%);
       opacity: 0;
       .wf-active &, .wf-inactive &, .wf-fail & {
         opacity: 1;
-        transform: translateX(0);
+        animation: intro-hero-slide 1s ease-in;
+        animation-fill-mode: forwards;
       }
-      transition: transform .5s linear;
     }
     .name {
       font-weight: bold;
-      @include wf-fade(.75s);
+      @include wf-fade-animation(.75s);
     }
     margin-bottom: 0.6em;
   }
 
   .intro-hero-sub-title {
-    @include wf-fade(1.25s);
+    @include wf-fade-animation(1.25s);
     font-family: $font-family-serif;
     font-weight: normal;
     margin: 1.3em 0;
@@ -57,7 +56,7 @@
   .intro-hero-copy {
     margin: 1em 0;
     opacity: 0;
-    @include wf-fade(1.5s);
+    @include wf-fade-animation(1.25s);
   }
 
   .intro-hero-social {
@@ -131,5 +130,24 @@
       width: 480px;
       margin-right: 0;
     }
+  }
+}
+
+@keyframes intro-hero-slide {
+  0% {
+    transform: matrix(1, 0, 0, 1, -400, 0);
+    opacity: 0;
+  }
+  85% {
+    transform: matrix(1, 0, 0 , 1, 0, 0);
+    opacity: 1;
+  }
+  90% {
+    transform: matrix(0.95, 0, 0, 1, 7, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    opacity: 1;
   }
 }

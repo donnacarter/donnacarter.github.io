@@ -13,7 +13,7 @@
   .spacer {
     display: table-cell;
     vertical-align: middle;
-    @include wf-fade;
+    @include wf-fade-animation(0,.5s);
   }
   .title {
     font-size: 200%;

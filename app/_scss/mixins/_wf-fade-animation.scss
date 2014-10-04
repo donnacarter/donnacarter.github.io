@@ -1,0 +1,19 @@
+@mixin wf-fade-animation ($delay: 0, $time: .25s) {
+  opacity: 0;
+  .wf-active &, .wf-inactive &, .wf-fail & {
+    @if $delay == 0 {
+      opacity: 1;
+    }
+    animation: wf-fade-animation $time linear $delay;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes wf-fade-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
