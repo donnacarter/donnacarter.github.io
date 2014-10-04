@@ -1,8 +1,13 @@
 @mixin wf-fade-animation ($delay: 0, $time: .25s) {
   opacity: 0;
   .wf-active &, .wf-inactive &, .wf-fail & {
+    opacity: 1;
+  }
+  .cssanimations.wf-active &, .cssanimations.wf-inactive &, .cssanimations.wf-fail & {
     @if $delay == 0 {
       opacity: 1;
+    } @else {
+      opacity: 0;
     }
     animation: wf-fade-animation $time linear $delay;
     animation-fill-mode: forwards;
