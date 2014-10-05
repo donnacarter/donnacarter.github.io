@@ -97,6 +97,32 @@
     }
   }
 
+  @media (min-width: $screen-xs-landscape-min) and (orientation: landscape) and (max-width: $screen-xs-max) {
+    .intro-hero-wrapper {
+      min-height: 283px + ($grid-basic-padding * 3);
+    }
+
+    .intro-hero-title, .intro-hero-sub-title, .intro-hero-copy {
+      margin-right: 232px + ($grid-basic-padding * 2);
+      max-width: 350px;
+    }
+
+    .intro-hero-image-wrapper {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 232px;
+      height: 283px;
+    }
+
+    .intro-hero-social {
+      width: 232px;
+      position: absolute;
+      right: 0;
+      top: 283px + $grid-basic-padding;
+    }
+  }
+
   @media (min-width: $screen-sm-min) {
     .intro-hero-wrapper {
       min-height: 354px + ($grid-basic-padding * 3);

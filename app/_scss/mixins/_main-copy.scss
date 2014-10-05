@@ -3,6 +3,14 @@
     font-size: 20px;
   }
 
+  @media(min-width: $screen-xs-min) and (orientation:landscape) {
+    font-size: $font-size-base;
+  }
+
+  @media(min-width: $screen-xs-landscape-min) and (orientation:landscape) {
+    font-size: 17px;
+  }
+
   @media(min-width: $screen-sm-min) {
     font-size: 20px;
   }
