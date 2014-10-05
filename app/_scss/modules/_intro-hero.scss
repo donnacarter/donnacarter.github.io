@@ -25,19 +25,19 @@
       }
       .wf-active &, .wf-inactive &, .wf-fail & {
         opacity: 1;
-        animation: intro-hero-slide 1s ease-in;
+        animation: intro-hero-slide .75s ease-in;
         animation-fill-mode: forwards;
       }
     }
     .name {
       font-weight: bold;
-      @include wf-fade-animation(1s, .5s);
+      @include wf-fade-animation(1.25s);
     }
     margin-bottom: 0.6em;
   }
 
   .intro-hero-sub-title {
-    @include wf-fade-animation(1.5s);
+    @include wf-fade-animation(2s);
     font-family: $font-family-serif;
     font-weight: normal;
     margin: 1.3em 0;
@@ -57,7 +57,7 @@
 
   .intro-hero-copy {
     margin: 1em 0;
-    @include wf-fade-animation(1.5s);
+    @include wf-fade-animation(2s);
   }
 
   .intro-hero-social {
