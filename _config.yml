@@ -8,7 +8,6 @@ description: Donna Carter
 author:
   name: Donna Carter
   email: me@donnacarter.co.uk
-auto: false
 
 protocol: http
 host: 0.0.0.0:9000
@@ -59,183 +58,190 @@ defaults:
 picture:
   source: images/fullsize
   output: generated-images
-  markup: picture
+  markup: img
   presets:
     home_page_hero:
-      ppi: [1, 2]
-      attr:
-        itemprop: image
+      ppi: [1, 2, 3]
       source_default:
         width: 290
 
     middle_column:
       ppi: [1, 2]
-      attr:
-        itemprop: image
       source_lg:
         media: '(min-width: 1200px)'
+        size: 535px
         width: 535
       source_md:
         media: '(min-width: 992px)'
+        size: 435px
         width: 435
       source_sm:
         media: '(min-width: 500px)'
+        size: 720px
         width: 720
       source_xs:
         media: '(min-width: 321px)'
         width: 464
       source_default:
-        width: 290
+        width: 320
 
     all_but_sidebar:
       ppi: [1, 2]
-      attr:
-        itemprop: image
       source_lg:
         media: '(min-width: 1200px)'
+        size: 848px
         width: 848
       source_md:
         media: '(min-width: 992px)'
+        size: 698px
         width: 698
       source_sm:
         media: '(min-width: 500px)'
+        size: 720px
         width: 720
       source_xs:
         media: '(min-width: 321px)'
         width: 464
       source_default:
-        width: 290
+        width: 320
 
     float_in_article:
       ppi: [1, 2]
-      attr:
-        itemprop: image
       source_lg:
         media: '(min-width: 1200px)'
+        size: 413px
         width: 413
       source_md:
         media: '(min-width: 992px)'
+        size: 329px
         width: 329
       source_default:
+        size: 50vw
         width: 253
 
     float_in_article_narrow:
       ppi: [1, 2]
-      attr:
-        itemprop: image
       source_lg:
         media: '(min-width: 1200px)'
+        size: 315px
         width: 315
       source_md:
         media: '(min-width: 992px)'
+        size: 248px
         width: 248
       source_default:
+        size: 50vw
         width: 253
 
     float_in_article_column:
       ppi: [1, 2]
-      attr:
-        itemprop: image
       source_lg:
         media: '(min-width: 1200px)'
+        size: 218px
         width: 218
       source_md:
         media: '(min-width: 992px)'
+        size: 168px
         width: 168
       source_default:
+        size: 50vw
         width: 253
 
     paired_all_but_sidebar:
       ppi: [1, 2]
-      attr:
-        itemprop: image
       source_lg:
         media: '(min-width: 1200px)'
+        size: 409px
         width: 409
       source_md:
         media: '(min-width: 992px)'
+        size: 334px
         width: 334
       source_sm:
         media: '(min-width: 768px)'
+        size: 345px
         width: 345
       source_xs:
         media: '(min-width: 480px)'
+        size: 50vw
         width: 354
       source_xxs:
-        media: '(min-width: 321px)'
         width: 449
       source_default:
-        width: 290
+        width: 320
 
     paired_middle_column:
       ppi: [1, 2]
-      attr:
-        itemprop: image
       source_lg:
         media: '(min-width: 1200px)'
+        size: 253px
         width: 253
       source_md:
         media: '(min-width: 992px)'
+        size: 203px
         width: 203
       source_sm:
         media: '(min-width: 768px)'
+        size: 345px
         width: 345
       source_xs:
         media: '(min-width: 480px)'
+        size: 50vw
         width: 354
       source_xxs:
-        media: '(min-width: 321px)'
         width: 449
       source_default:
-        width: 290
+        width: 320
 
     trio_all_but_sidebar:
       ppi: [1, 2]
-      attr:
-        itemprop: image
       source_lg:
         media: '(min-width: 1200px)'
+        size: 409px
         width: 409
       source_md:
         media: '(min-width: 992px)'
+        size: 354px
         width: 334
       source_sm:
         media: '(min-width: 480px)'
+        size: 220px
         width: 220
-      source_sm:
+      source_xs:
         media: '(min-width: 321px)'
+        descriptor: 33.333vw
         width: 449
       source_default:
         width: 290
 
     post_summary_thumbnail:
       ppi: [1, 2]
-      attr:
-        itemprop: image
       source_sm:
         media: '(min-width: 768px)'
+        size: 220px
         width: 220
         height: 220
       source_xs:
         media: '(min-width: 480px)'
+        size: 160px
         width: 160
         height: 160
       source_default:
-        width: 290
-        height: 290
+        width: 320
+        height: 320
 
     work_square:
       ppi: [1, 2]
-      attr:
-        itemprop: image
       source_sm:
         media: '(min-width: 480px)'
+        size: 353px
         width: 353
         height: 353
       source_xs:
         media: '(min-width: 321px)'
+        size: 450px
         width: 450
         height: 450
       source_default:
-        width: 290
-        height: 290
+        width: 320
+        height: 320

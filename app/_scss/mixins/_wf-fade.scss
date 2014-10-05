@@ -1,7 +1,9 @@
 @mixin wf-fade ($eventual: 1) {
-  opacity: 0;
+  .js & {
+    opacity: 0;
+  }
   .wf-active &, .wf-inactive &, .wf-fail & {
     opacity: $eventual;
   }
-  transition: opacity .25s linear;
+  transition: opacity .25s ease-in;
 }

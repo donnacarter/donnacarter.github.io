@@ -13,13 +13,15 @@
   .spacer {
     display: table-cell;
     vertical-align: middle;
-    @include wf-fade-animation(0,.5s);
   }
   .title {
     font-size: 200%;
+    // seem to need this delay for Firefox
+    @include wf-fade-animation(.01s, .5s);
   }
   .sub-title {
     font-size: 90%;
+    @include wf-fade-animation(.5s, .25s);
   }
 
   @media(min-width: $screen-xs-min) {

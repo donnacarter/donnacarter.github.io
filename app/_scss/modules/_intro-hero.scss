@@ -20,7 +20,9 @@
     }
     .intro {
       font-weight: normal;
-      opacity: 0;
+      .js & {
+        opacity: 0;
+      }
       .wf-active &, .wf-inactive &, .wf-fail & {
         opacity: 1;
         animation: intro-hero-slide 1s ease-in;
@@ -55,7 +57,6 @@
 
   .intro-hero-copy {
     margin: 1em 0;
-    opacity: 0;
     @include wf-fade-animation(1.25s);
   }
 

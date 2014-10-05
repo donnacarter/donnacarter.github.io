@@ -131,10 +131,16 @@ module Jekyll
               ppi_sources[ppi_key] = {
                 :width => if source[:width] then (source[:width].to_f * p).round else nil end,
                 :height => if source[:height] then (source[:height].to_f * p).round else nil end,
-                'media' => if source['media']
-                  "#{source['media']} and (-webkit-min-device-pixel-ratio: #{p}), #{source['media']} and (min-resolution: #{(p * 96).round}dpi)"
+                'descriptor' => source['descriptor'],
+                :ppi => p,
+                'media' => if settings['picture']
+                  if source['media']
+                    "#{source['media']} and (-webkit-min-device-pixel-ratio: #{p}), #{source['media']} and (min-resolution: #{(p * 96).round}dpi)"
+                  else
+                    "(-webkit-min-device-pixel-ratio: #{p}), (min-resolution: #{(p * 96).to_i}dpi)"
+                  end
                 else
-                  "(-webkit-min-device-pixel-ratio: #{p}), (min-resolution: #{(p * 96).to_i}dpi)"
+                  source['media']
                 end,
                 :src => source[:src]
               }
@@ -165,17 +171,30 @@ module Jekyll
 
         # Note: we can't indent html output because markdown parsers will turn 4 spaces into code blocks
         # Note: Added backslash+space escapes to bypass markdown parsing of indented code below -WD
-        picture_tag = "<picture>\n"\
-                      "#{source_tags}"\
-                      "#{markdown_escape * 4}<img srcset=\"#{instance['source_default'][:generated_src]}\" #{html_attr_string}>\n"\
-                      "#{markdown_escape * 2}</picture>\n"
+        html = "<picture>\n"\
+               "#{source_tags}"\
+               "#{markdown_escape * 4}<img srcset=\"#{instance['source_default'][:generated_src]}\" #{html_attr_string}>\n"\
+               "#{markdown_escape * 2}</picture>\n"
 
       elsif settings['markup'] == 'img'
-        # TODO implement <img srcset/sizes>
+        srcs = []
+        sizes = []
+        source_keys.each { |source|
+          # next if source == 'source_default'
+          src = instance[source][:generated_src].to_s
+          src += " #{instance[source][:generated_width]}w"
+          if instance[source]['media'] and instance[source]['size']
+            sizes.push "#{instance[source]['media']} #{instance[source]['size']}"
+          end
+          srcs.push src
+        }
+        srcset = srcs.count > 0 ? " srcset=\"#{srcs.reverse.join(', ')}\"" : ''
+        default_size = instance['source_default']['size'] || '100vw'
+        sizes = sizes.count > 0 ? " sizes=\"#{sizes.join(', ')}, #{default_size}\"" : ''
+        html = "<img src=\"#{instance['source_default'][:generated_src]}\"#{srcset}#{sizes} #{html_attr_string}>\n"
       end
-
         # Return the markup!
-        picture_tag
+        html
     end
 
     def generate_images(instances, site_source, site_dest, image_source, image_dest, baseurl)
@@ -201,10 +220,14 @@ module Jekyll
 
         if dir_match.length > 0
           instances[key][:generated_src] = Pathname.new(File.join(baseurl, image_dest, image_dir, File.basename(dir_match[0]))).cleanpath
+          instances[key][:generated_width] = expected_width
+          instances[key][:generated_height] = expected_height
         else
           # cached_images[instance[:src]][:image] = MiniMagick::Image.open(file_path) unless cached_images[instance[:src]][:image]
-          actual_file = generate_image(MiniMagick::Image.open(file_path), instance[:width], instance[:height], dest_dir, basename, digest, ext)
+          actual_file, width, height = generate_image(MiniMagick::Image.open(file_path), instance[:width], instance[:height], dest_dir, basename, digest, ext)
           instances[key][:generated_src] = Pathname.new(File.join(baseurl, image_dest, image_dir, File.basename(actual_file))).cleanpath
+          instances[key][:generated_width] = width
+          instances[key][:generated_height] = height
         end
 
       end
@@ -268,7 +291,7 @@ module Jekyll
 
         image.write gen_dest_file
       end
-      gen_dest_file
+      return gen_dest_file, gen_width, gen_height
     end
 
 

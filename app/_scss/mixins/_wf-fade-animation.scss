@@ -1,24 +1,22 @@
-@mixin wf-fade-animation ($delay: 0, $time: .25s) {
-  opacity: 0;
+@mixin wf-fade-animation ($delay: .01s, $time: .25s) {
+  .js & {
+    opacity: 0;
+  }
   .wf-active &, .wf-inactive &, .wf-fail & {
     opacity: 1;
   }
   .cssanimations.wf-active &, .cssanimations.wf-inactive &, .cssanimations.wf-fail & {
-    @if $delay == 0 {
-      opacity: 1;
-    } @else {
-      opacity: 0;
-    }
-    animation: wf-fade-animation $time linear $delay;
+    opacity: 0;
+    animation: wf-fade-animation $time ease-in $delay;
     animation-fill-mode: forwards;
   }
 }
 
 @keyframes wf-fade-animation {
-  from {
+  0% {
     opacity: 0;
   }
-  to {
+  100% {
     opacity: 1;
   }
 }
