@@ -56,8 +56,5 @@
       @extend .col-md-8;
     }
   }
-  @media(min-width: $screen-md-min) {
-    margin-bottom: $grid-basic-padding * 3;
-  }
 }
 
