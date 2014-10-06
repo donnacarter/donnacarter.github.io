@@ -64,6 +64,7 @@ picture:
       ppi: [1, 2, 3]
       source_default:
         width: 290
+        size: 290px
 
     middle_column:
       ppi: [1, 2]

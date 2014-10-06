@@ -182,19 +182,24 @@ module Jekyll
         source_keys.each { |source|
           # next if source == 'source_default'
           src = instance[source][:generated_src].to_s
-          src += " #{instance[source][:generated_width]}w"
+          src += " #{instance[source][:generated_width].to_f.round}w"
           if instance[source]['media'] and instance[source]['size']
             sizes.push "#{instance[source]['media']} #{instance[source]['size']}"
           end
           srcs.push src
         }
         srcset = srcs.count > 0 ? " srcset=\"#{srcs.reverse.join(', ')}\"" : ''
-        default_size = instance['source_default']['size'] || '100vw'
-        sizes = sizes.count > 0 ? " sizes=\"#{sizes.join(', ')}, #{default_size}\"" : ''
+        sizes =
+          if sizes.count > 0 || instance['source_default']['size']
+            default_size = instance['source_default']['size'] || '100vw'
+            ' sizes="' + (sizes.count > 0 ? "#{sizes.join(', ')}, " : '') + default_size + '"'
+          else
+            ''
+          end
         html = "<img src=\"#{instance['source_default'][:generated_src]}\"#{srcset}#{sizes} #{html_attr_string}>\n"
       end
-        # Return the markup!
-        html
+      # Return the markup!
+      html
     end
 
     def generate_images(instances, site_source, site_dest, image_source, image_dest, baseurl)
