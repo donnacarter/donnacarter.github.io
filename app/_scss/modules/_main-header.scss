@@ -17,7 +17,7 @@
   .title {
     font-size: 200%;
     // seem to need this delay for Firefox
-    @include wf-fade-animation(.01s, .5s);
+    @include wf-fade-animation(0s, .5s);
   }
   .sub-title {
     font-size: 90%;

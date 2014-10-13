@@ -1,4 +1,5 @@
-@mixin wf-fade-animation ($delay: .01s, $time: .25s) {
+// firefox seems to need a s on a 0 delay
+@mixin wf-fade-animation ($delay: 0s, $time: .25s) {
   .js & {
     opacity: 0;
   }
