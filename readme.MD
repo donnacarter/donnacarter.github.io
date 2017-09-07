@@ -3,6 +3,10 @@
 ## Missing Npm (grunt) modules
 - Run `npm install`
 
+## Log in from terminal
+- type in `cd ~/sites/donnacarterjekyll`
+- then `grunt serve`
+
 ## Deploying to production
 - Make sure all changes are commited
 - Run `grunt serve:dist` so we can see check the changes on the built version
