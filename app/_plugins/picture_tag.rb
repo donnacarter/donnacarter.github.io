@@ -229,6 +229,7 @@ module Jekyll
           instances[key][:generated_height] = expected_height
         else
           # cached_images[instance[:src]][:image] = MiniMagick::Image.open(file_path) unless cached_images[instance[:src]][:image]
+          puts file_path
           actual_file, width, height = generate_image(MiniMagick::Image.open(file_path), instance[:width], instance[:height], dest_dir, basename, digest, ext)
           instances[key][:generated_src] = Pathname.new(File.join(baseurl, image_dest, image_dir, File.basename(actual_file))).cleanpath
           instances[key][:generated_width] = width
