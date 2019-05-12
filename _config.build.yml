@@ -6,4 +6,5 @@
 future: false
 show_drafts: false
 
+protocol: https
 host: donnacarter.design
