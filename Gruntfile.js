@@ -43,7 +43,7 @@ module.exports = function (grunt) {
         files: [
           '.jekyll/**/*.html',
           '.tmp/css/**/*.css',
-          '{.tmp,<%= yeoman.app %>}/<%= js %>/**/*.js',
+          '{.tmp,<%= yeoman.app %>}/js/**/*.js',
           '<%= yeoman.app %>/images/**/*.{gif,jpg,jpeg,png,svg,webp}'
         ]
       }
@@ -317,28 +317,28 @@ module.exports = function (grunt) {
         }
       }
     },
-    jshint: {
-      options: {
-        jshintrc: '.jshintrc',
-        reporter: require('jshint-stylish')
-      },
-      all: [
-        'Gruntfile.js',
-        '<%= yeoman.app %>/js/**/*.js',
-        'test/spec/**/*.js'
-      ]
-    },
-    csslint: {
-      options: {
-        csslintrc: '.csslintrc'
-      },
-      check: {
-        src: [
-          '<%= yeoman.app %>/css/**/*.css',
-          '<%= yeoman.app %>/_scss/**/*.scss'
-        ]
-      }
-    },
+    // jshint: {
+    //   options: {
+    //     jshintrc: '.jshintrc',
+    //     reporter: require('jshint-stylish')
+    //   },
+    //   all: [
+    //     'Gruntfile.js',
+    //     '<%= yeoman.app %>/js#<{(||)}>#*.js',
+    //     'test/spec#<{(||)}>#*.js'
+    //   ]
+    // },
+    // csslint: {
+    //   options: {
+    //     csslintrc: '.csslintrc'
+    //   },
+    //   check: {
+    //     src: [
+    //       '<%= yeoman.app %>/css#<{(||)}>#*.css',
+    //       '<%= yeoman.app %>/_scss#<{(||)}>#*.scss'
+    //     ]
+    //   }
+    // },
     modernizr: {
 
       dist: {
@@ -439,8 +439,8 @@ module.exports = function (grunt) {
     'clean:server',
     'jekyll:check',
     'compass:server',
-    'jshint:all',
-    'csslint:check'
+    // 'jshint:all',
+    // 'csslint:check'
   ]);
 
   grunt.registerTask('build', [
